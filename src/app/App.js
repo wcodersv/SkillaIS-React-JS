@@ -1,10 +1,10 @@
-import { ButtonBalanceIcon } from '../ui/ButtonBalanceIcon/ButtonBalanceIcon';
 import './styles/global.css';
+import { AudioPlayer } from '../ui/AudioPlayer/AudioPlayer';
 
 function App() {
   return (
     <div>
-      <ButtonBalanceIcon />
+      <AudioPlayer />
     </div>
   );
 }

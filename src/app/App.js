@@ -1,14 +1,20 @@
-import { Call } from "../ui/tableComponent/icon/Call";
-import { Rating } from "../ui/tableComponent/rating/Rating";
-import { ButtonBalanceIcon } from "../ui/ButtonBalanceIcon/ButtonBalanceIcon";
+import ButtonBalanceIcon from "../ui/ButtonBalanceIcon";
+import CloseButton from "../ui/CloseButton";
+import { ExpandLessButton } from "../ui/ExpandLess/ExpandLessButton";
+import ExpandMoreButton from "../ui/ExpandMore";
+import { HelpButtonIcon } from "../ui/HelpButton/HelpButtonIcon";
+import LogoutButton from "../ui/LogoutButton";
 import "./styles/global.css";
 
 function App() {
   return (
     <div>
-      <Call />
-      <Rating state="default" />
-      <ButtonBalanceIcon />
+      <ButtonBalanceIcon/>
+      <HelpButtonIcon/>
+      <ExpandLessButton/>
+      <ExpandMoreButton/>
+      <CloseButton/>
+      <LogoutButton/>
     </div>
   );
 }

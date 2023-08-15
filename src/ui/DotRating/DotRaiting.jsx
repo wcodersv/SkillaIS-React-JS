@@ -1,10 +1,12 @@
 import React from 'react'
-import './DotRating.css'
+import './DotRaiting.css'
 
 export const DotRaiting = () => {
   return (
-      <>
-      <figure className='rate'></figure>
-      </>
-  )
+    <div className="rate">
+      <figure className="dot"></figure>
+      <figure className="dot"></figure>
+      <figure className="dot"></figure>
+    </div>
+  );
 }

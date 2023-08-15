@@ -1,4 +1,3 @@
-import { useState } from "react";
 import s from "./StatusAssessment.module.css";
 
 export const StatusAssessment = () => {

@@ -1,0 +1,16 @@
+.search {
+  width: 482px;
+  height: 40px;
+  border-radius: 48px;
+  border: 1px solid #eaf0fa;
+  background: #fff;
+  color: var(--text-secondary, #5E7793);
+  padding-left: 46px;
+}
+::placeholder {
+  color: var(--text-secondary, #5E7793);
+}
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}

@@ -1,0 +1,39 @@
+.bad {
+  width: 55px;
+  height: 26px;
+  border-radius: 4px;
+  border: 1px solid var(--ui-red, #ea1a4f);
+  background: var(--ui-light-red, #fee9ef);
+  color: var(--ui-red, #ea1a4f);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  padding: 6px 8px;
+}
+.good {
+  width: 66px;
+  height: 26px;
+  border-radius: 4px;
+  border: 1px solid var(--ui-icon, #adbfdf);
+  background: var(--ui-secondary, #d8e4fb);
+  color: var(--text, #122945);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  padding: 6px 8px;
+}
+.great {
+  width: 70px;
+  height: 26px;
+  border-radius: 4px;
+  border: 1px solid var(--ui-green, #28a879);
+  background: var(--ui-light-green, #dbf8ef);
+  color: var(--text-green, #00a775);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  padding: 6px 8px;
+}

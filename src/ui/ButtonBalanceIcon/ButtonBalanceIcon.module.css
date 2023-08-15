@@ -1,0 +1,33 @@
+.button {
+    display: flex;
+    width: 145px;
+    height: 40px;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    border-radius: 48px;
+    border: none;
+    background: #FFF;
+
+    /*text*/
+    color: var(--text-header, #899CB1);
+    text-align: right;
+    font-family: SF Pro Display;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 148%;
+    /* 20.72px */
+}
+
+label span {
+    color: var(--text, #122945);
+    font-family: SF Pro Display;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 148%;
+}

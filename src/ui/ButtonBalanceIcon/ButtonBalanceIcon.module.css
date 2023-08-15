@@ -1,11 +1,11 @@
 .button {
     display: flex;
-    width: 145px;
+    width: 160px;
     height: 40px;
     padding: 8px 12px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
     flex-shrink: 0;
 
     border-radius: 48px;
@@ -31,10 +31,16 @@
     font-style: normal;
     font-weight: 500;
     line-height: 148%;
+    display: flex;
+    align-items: center;
 }
 
 .labeltext:hover {
     color: var(--ui, #0024CB);
+}
+
+.labeltext span{
+    margin-right: 10px;
 }
 
 .svgbtn {

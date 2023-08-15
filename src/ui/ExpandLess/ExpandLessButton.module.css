@@ -1,0 +1,22 @@
+.default {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-image: url("./expand_less_pressed.svg");
+  background-size: contain;
+}
+
+.default:hover {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-image: url("./expand_less_hover.svg");
+  background-size: contain;
+}
+
+.disabled {
+  width: 24px;
+  height: 24px;
+  background-image: url("./expand_less_default.svg");
+  background-size: contain;
+}

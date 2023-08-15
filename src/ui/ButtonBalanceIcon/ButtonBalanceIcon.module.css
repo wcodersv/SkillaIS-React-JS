@@ -15,19 +15,32 @@
     /*text*/
     color: var(--text-header, #899CB1);
     text-align: right;
-    font-family: SF Pro Display;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 148%;
     /* 20.72px */
+
 }
 
-label span {
+.labeltext {
     color: var(--text, #122945);
-    font-family: SF Pro Display;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 148%;
+}
+
+.labeltext:hover {
+    color: var(--ui, #0024CB);
+}
+
+.svgbtn {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: var(--ui-accent, #002CFB);
+    cursor: pointer;
 }

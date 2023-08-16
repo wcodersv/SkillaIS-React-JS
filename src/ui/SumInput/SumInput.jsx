@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* eslint-disable react/prop-types */
+>>>>>>> refs/remotes/upstream/main
 import React from "react";
 import s from "./SumInput.module.css";
 

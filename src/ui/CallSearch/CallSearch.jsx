@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import React from "react";
+>>>>>>> refs/remotes/upstream/main
 import s from "./CallSearch.module.css";
 import { CloseButton } from "../CloseButton/CloseButton";
 import { Magnifier } from "../Magnifier/Magnifier";

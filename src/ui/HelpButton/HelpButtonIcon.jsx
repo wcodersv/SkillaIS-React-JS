@@ -1,11 +1,10 @@
-import React from 'react'
-import s from './HelpButtonIcon.module.css'
+import React from 'react';
+import s from './HelpButtonIcon.module.css';
 
 export const HelpButtonIcon = () => {
-
-    return (
-        <>
-            <div className={s.default}></div>
-        </>
-    )
-}
+  return (
+    <>
+      <div className={s.default}></div>
+    </>
+  );
+};

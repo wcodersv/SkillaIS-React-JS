@@ -1,2 +1,2 @@
-import { StatusAssessment } from "./StatusAssessment";
+import {StatusAssessment} from './StatusAssessment';
 export default StatusAssessment;

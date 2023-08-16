@@ -1,2 +1,2 @@
-import { IncomingCall } from "./IncomingCall";
+import {IncomingCall} from './IncomingCall';
 export default IncomingCall;

@@ -1,2 +1,2 @@
-import {DotRaiting} from './DotRaiting';
+import { DotRaiting } from "./DotRaiting";
 export default DotRaiting;

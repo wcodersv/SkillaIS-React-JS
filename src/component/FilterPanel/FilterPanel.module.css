@@ -1,0 +1,8 @@
+.panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters {
+    display: flex;
+}

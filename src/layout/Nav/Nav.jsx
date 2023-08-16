@@ -1,5 +1,5 @@
-import React from 'react';
-import style from './Nav.module.css';
+import React from "react";
+import style from "./Nav.module.css";
 
 export const Nav = () => {
   return (
@@ -16,7 +16,6 @@ export const Nav = () => {
         <li>База знаний</li>
         <li>Настройки</li>
       </ul>
-
     </nav>
   );
 };

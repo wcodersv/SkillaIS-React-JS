@@ -1,0 +1,21 @@
+.findcall {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    height: 16px;
+    width: 16px;
+}
+
+input {
+   background-color: transparent;
+   border-style: none;
+   font-size: 14px;
+   color: var(--text-secondary, #5E7793);
+   margin-left: 12px;
+}
+
+input:focus {
+    outline: none;
+}

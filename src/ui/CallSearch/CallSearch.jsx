@@ -1,6 +1,7 @@
-import s from "./CallSearch.module.css"
-import { CloseButton } from "../CloseButton/CloseButton"
-import { Magnifier} from "../Magnifier/Magnifier"
+import React from "react";
+import s from "./CallSearch.module.css";
+import { CloseButton } from "../CloseButton/CloseButton";
+import { Magnifier } from "../Magnifier/Magnifier";
 
 export const CallSearch = () => {
   return (
@@ -14,4 +15,4 @@ export const CallSearch = () => {
       <input className={s.search} placeholder="Поиск по звонкам"></input>
     </>
   );
-}
+};

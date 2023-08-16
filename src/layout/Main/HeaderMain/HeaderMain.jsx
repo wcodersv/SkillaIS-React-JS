@@ -1,6 +1,6 @@
-import s from './HeaderMain.module.css';
+import React from "react";
+import style from "./HeaderMain.module.css";
 
 export const HeaderMain = () => {
-  <div className={s.conteiner}>
-  </div>;
+  <div className={style.conteiner}></div>;
 };

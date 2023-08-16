@@ -1,2 +1,2 @@
-import {Magnifier} from './CallSearch';
+import { Magnifier } from "./CallSearch";
 export default Magnifier;

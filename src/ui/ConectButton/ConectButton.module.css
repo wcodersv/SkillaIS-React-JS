@@ -1,0 +1,37 @@
+.active {
+  font-size: 16px;
+  color: white;
+  width: 200px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 25px 13px 25px;
+  border-radius: 4px;
+  background: var(--ui-accent-active, #274bc8);
+}
+
+.active:hover {
+  cursor: pointer;
+    color: white;
+    width: 200px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 25px 13px 25px;
+    border-radius: 4px;
+    background: var(--ui, #0024CB);
+}
+
+.default {
+    color: white;
+    width: 200px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 25px 13px 25px;
+    border-radius: 4px;
+    background: var(--ui-accent, #005FF8);
+}

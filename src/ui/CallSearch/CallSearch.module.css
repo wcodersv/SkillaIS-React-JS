@@ -1,16 +1,28 @@
 .search {
+  position: relative;
+  z-index: 1;
   width: 482px;
   height: 40px;
   border-radius: 48px;
   border: 1px solid #eaf0fa;
   background: #fff;
-  color: var(--text-secondary, #5E7793);
+  color: var(--text, #122945);
   padding-left: 46px;
 }
 ::placeholder {
-  color: var(--text-secondary, #5E7793);
+  color: var(--text-secondary, #5e7793);
 }
 :focus {
   outline: 0;
   outline-offset: 0;
+}
+.magnifier {
+  position: absolute;
+  z-index: 2;
+  margin: 12px 0 12px 18px;
+}
+.button{
+  position: absolute;
+  z-index: 2;
+  margin: 8px 12px 8px 446px;
 }

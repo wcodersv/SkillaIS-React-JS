@@ -1,0 +1,41 @@
+.active {
+  border-radius: 4px;
+  border: 1px solid var(--ui-accent-active, #274bc8);
+  background: #fff;
+  color: #274bc8;
+  padding: 9px 24px 11px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 122px;
+  height: 41px;
+  font-size: 14px;
+}
+
+.active:hover {
+  border-radius: 4px;
+  border: 1px solid var(--ui, #0024cb);
+  background: var(--ui, #0024cb);
+  color: white;
+  padding: 9px 24px 11px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 122px;
+  height: 41px;
+  font-size: 14px;
+}
+
+.default {
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--ui-accent, #002CFB);
+  background: #002CFB);
+  color: white;
+  padding: 9px 24px 11px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 122px;
+  height: 41px;
+}

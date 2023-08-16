@@ -1,8 +1,6 @@
-import React from 'react'
-import s from './ExpandLessButton.module.css'
+import React from "react";
+import s from "./ExpandLessButton.module.css";
 
-export const ExpandLessButton  = () => {
-  return (
-    <div className={s.default}></div>
-  )
-}
+export const ExpandLessButton = () => {
+  return <div className={s.default}></div>;
+};

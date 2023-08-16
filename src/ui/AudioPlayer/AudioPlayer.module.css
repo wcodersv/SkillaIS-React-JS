@@ -1,0 +1,36 @@
+.custom {
+    display: flex;
+    border-radius: 48px;
+    width: 352px;
+    height: 48px;
+    background: #EAF0FA;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0 12px 0 12px;
+}
+
+
+.display {
+    color: var(--text, #122945);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%;
+    /* 21.75px */
+    display: inline-block;
+}
+
+.btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+
+.progress {
+    width: 164px;
+    height: 4px;
+    border-radius: 50px;
+    background: var(--ui-icon, #ADBFDF);
+}

@@ -1,10 +1,14 @@
-import React from 'react'
-import './DotRating.css'
+import React from "react";
+import "./DotRaiting.css";
 
-export const DotRaiting = () => {
+export const DotRaiting = ({ divClass = "perfect", figClass = "dot" }) => {
   return (
-      <>
-      <figure className='rate'></figure>
-      </>
-  )
-}
+    // для дива классы perfect / good / bad
+    <div className={divClass}>
+      {/* для точек классы dot / gray /red */}
+      <figure className={figClass}></figure>
+      <figure className={figClass}></figure>
+      <figure className={figClass}></figure>
+    </div>
+  );
+};

@@ -1,0 +1,14 @@
+.body {
+    width: 240px;
+    height: 100vh;
+    flex-shrink: 0;
+    background: #091336;
+
+    /*text*/
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+}

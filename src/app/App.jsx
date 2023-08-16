@@ -4,13 +4,18 @@ import Layout from "../layout/Layout";
 import Header from "../layout/Header";
 import Main from "../layout/Main";
 
+
+
 // eslint-disable-next-line require-jsdoc
+
 function App() {
   return (
     <>
       <Layout>
         <Header />
-        <Main>{/* Ваш контент здесь */}</Main>
+        <Main>
+
+        </Main>
       </Layout>
     </>
   );

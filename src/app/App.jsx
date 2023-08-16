@@ -13,9 +13,7 @@ function App() {
     <>
       <Layout>
         <Header />
-        <Main>
-
-        </Main>
+        <Main></Main>
       </Layout>
     </>
   );

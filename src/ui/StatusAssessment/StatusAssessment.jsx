@@ -1,4 +1,4 @@
-import s from "./StatusAssessment.module.css";
+import s from './StatusAssessment.module.css';
 
 export const StatusAssessment = () => {
   return (

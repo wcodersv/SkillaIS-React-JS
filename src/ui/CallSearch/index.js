@@ -1,2 +1,2 @@
-import { CallSearch } from "./CallSearch";
+import {CallSearch} from './CallSearch';
 export default CallSearch;

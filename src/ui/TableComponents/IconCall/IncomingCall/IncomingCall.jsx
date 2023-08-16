@@ -1,8 +1,8 @@
-import React from 'react'
-import './IncomingCall.css'
+import React from 'react';
+import './IncomingCall.css';
 
 export const IncomingCall = () => {
   return (
-      <div className='incoming decline'></div>
-  )
-}
+    <div className='incoming decline'></div>
+  );
+};

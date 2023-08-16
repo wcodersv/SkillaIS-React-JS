@@ -1,0 +1,7 @@
+.call_wrapper {
+    display: flex;
+    width: 1440px;
+    height: 65px;
+    background-color: #FFF;
+    align-items: center;
+}

@@ -4,8 +4,10 @@ import Layout from "../layout/Layout";
 import Header from "../layout/Header";
 import Main from "../layout/Main";
 
-// eslint-disable-next-line require-jsdoc
-
+/**
+ * Application entrypoint
+ * @return {Page} Main page
+ */
 function App() {
   return (
     <>

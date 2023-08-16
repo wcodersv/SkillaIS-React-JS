@@ -1,6 +1,10 @@
-import React from "react";
-import style from "./Main.module.css";
+import style from './Main.module.css';
+import {HeaderMain} from './HeaderMain/HeaderMain';
 
 export const Main = () => {
-  return <div className={style.body}>Main</div>;
+  return (
+    <div className={style.body}>
+      <HeaderMain />
+    </div>
+  );
 };

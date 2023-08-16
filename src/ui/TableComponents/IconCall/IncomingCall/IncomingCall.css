@@ -1,0 +1,14 @@
+.incoming {
+    width: 12.522px;
+    height: 12.522px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../IncomingCall/Incoming.png);
+}
+.decline {
+    width: 12.522px;
+    height: 12.522px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../IncomingCall/Incoming_declined.png);
+}

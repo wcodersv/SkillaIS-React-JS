@@ -1,8 +1,8 @@
 import React from 'react'
-import CallSvg from '../OutgoingCall/Vector.svg'
+import '../OutgoingCall/Outgoing.css'
 
 export const OutgoingCall = () => {
   return (
-    <img src={CallSvg} alt="outgoing" />
+    <div className='outgoing'></div>
   )
 }

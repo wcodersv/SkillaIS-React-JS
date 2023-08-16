@@ -3,7 +3,6 @@ import "./styles/global.css";
 import Layout from "../layout/Layout";
 import Header from "../layout/Header";
 import Main from "../layout/Main";
-import UserPanel from "../component/UserPanel";
 
 /**
  * Application entrypoint
@@ -14,9 +13,7 @@ function App() {
     <>
       <Layout>
         <Header />
-        <Main>
-          <UserPanel />
-        </Main>
+        <Main></Main>
       </Layout>
     </>
   );

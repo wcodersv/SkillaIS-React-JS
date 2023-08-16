@@ -1,0 +1,24 @@
+.alltype {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    background-image: url("./dropdown.svg");
+    width: 18px;
+    height: 21px;
+    background-color: transparent;
+    border: none;
+    margin-left: 4px;
+}
+
+form {
+    margin-right: 32px;
+}
+
+label {
+    font-size: 14px;
+    color: var(--text-secondary, #5E7793);
+}
+
+.alltype:focus {
+    outline: none;
+}

@@ -1,8 +1,6 @@
-import React from 'react'
-import s from './Checker.module.css'
+import React from "react";
+import s from "./Checker.module.css";
 
 export const Checker = () => {
-  return (
-    <div>Checker</div>
-  )
-}
+  return <div className={s.default}>Checker</div>;
+};

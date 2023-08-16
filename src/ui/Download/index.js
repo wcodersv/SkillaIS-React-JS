@@ -1,2 +1,2 @@
-import {Download} from './Download';
+import { Download } from "./Download";
 export default Download;

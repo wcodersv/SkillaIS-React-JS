@@ -1,4 +1,4 @@
-import s from './CallSearch.module.css';
+import s from "./CallSearch.module.css";
 export const CallSearch = () => {
   return (
     <>

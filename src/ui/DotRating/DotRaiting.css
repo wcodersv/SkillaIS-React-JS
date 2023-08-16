@@ -1,12 +1,47 @@
-.rate {
+.perfect {
     width: 28px;
     height: 8px;
     display: flex;
     justify-content: space-between;
 }
+.good {
+    width: 28px;
+    height: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.middle :last-child {
+    opacity: 0;
+}
+.bad {
+    width: 28px;
+    height: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.bad :nth-child(2) {
+    opacity: 0;
+}
+.bad :last-child{
+    opacity: 0;
+}
 .dot {
     width: 8px;
     height: 8px;
     background-color: #28A879;
+    border-radius: 250px;
+}
+.gray {
+    
+    width: 8px;
+    height: 8px;
+    background-color: #ADBFDF;
+    border-radius: 250px;
+}
+
+.red {
+    width: 8px;
+    height: 8px;
+    background-color: #ff0000;
     border-radius: 250px;
 }

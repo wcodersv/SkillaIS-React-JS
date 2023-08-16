@@ -1,12 +1,14 @@
 import React from 'react'
 import './DotRaiting.css'
 
-export const DotRaiting = () => {
+export const DotRaiting = ({divClass = 'perfect', figClass = 'dot'}) => {
   return (
-    <div className="rate">
-      <figure className="dot"></figure>
-      <figure className="dot"></figure>
-      <figure className="dot"></figure>
+    // для дива классы perfect / good / bad
+    <div className={divClass}>
+      {/* для точек классы dot / gray /red */}
+      <figure className={figClass}></figure>
+      <figure className={figClass}></figure>
+      <figure className={figClass}></figure>
     </div>
   );
 }

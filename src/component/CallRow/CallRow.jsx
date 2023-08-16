@@ -10,7 +10,9 @@ import StatusAssessment from "../../ui/StatusAssessment";
 export const CallRow = () => {
   return (
     <div className="call_wrapper">
-      <IncomingCall />
+      <div className="type">
+        <IncomingCall />
+      </div>
       <p className="time">19:00</p>
       <div className="employee_avatar">
         <Avatar1 />

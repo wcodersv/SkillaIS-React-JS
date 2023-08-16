@@ -1,18 +1,49 @@
 .callgrid {
     display: grid;
     width: 1440px;
-    height: 100px;
     grid-template-rows: repeat(1,1fr);
     border-radius: 0 0 8px 8px;
-    overflow: hidden;
+
 }
+
 .grid_header {
     display: flex;
     height: 82px;
-    justify-content: space-between;
     align-items: center;
     padding: 0 40px;
     background-color: white;
     border-bottom: 1px solid;
     border-radius: 8px 8px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #899CB1;
+}
+.type_title {
+    margin-right: 30px;
+}
+
+.time_title {
+    margin-right: 48px;
+}
+
+.employee_title {
+    margin-right: 60px;
+}
+
+.call_title {
+    margin-right: 281px;
+}
+
+.source_title {
+    margin-right: 154px;
+}
+
+.duration_title {
+    margin-left: auto;
+}
+
+.grid_footer {
+    height: 57px;
+    border-radius: 0 0 8px 8px;
+    background-color: white;
 }

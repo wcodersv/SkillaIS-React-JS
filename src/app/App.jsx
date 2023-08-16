@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import './styles/global.css';
 import Layout from '../layout/Layout';
 import Header from '../layout/Header';
@@ -10,7 +11,6 @@ function App() {
         <Header />
         <Main>
         </Main>
-
       </Layout>
     </>
   );

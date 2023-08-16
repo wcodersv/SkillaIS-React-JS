@@ -1,9 +1,10 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+import React from 'react';
 
-export const Layout = ({ children }) => {
-    return (
-        <>
-            {children}
-        </>
-    )
-}
+export const Layout = ({children}) => {
+  return (
+    <>
+      {children}
+    </>
+  );
+};

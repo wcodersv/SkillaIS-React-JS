@@ -1,2 +1,2 @@
-import { SelectedAudioFiles } from "./SelectedAudioFiles";
+import {SelectedAudioFiles} from './SelectedAudioFiles';
 export default SelectedAudioFiles;

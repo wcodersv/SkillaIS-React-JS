@@ -1,3 +1,3 @@
-import { HelpButtonIcon } from "./HelpButtonIcon";
+import {HelpButtonIcon} from './HelpButtonIcon';
 
 export default HelpButtonIcon;

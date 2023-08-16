@@ -1,5 +1,5 @@
-import React from 'react'
-import './DotRaiting.css'
+import React from 'react';
+import './DotRaiting.css';
 
 export const DotRaiting = ({divClass = 'perfect', figClass = 'dot'}) => {
   return (
@@ -11,4 +11,4 @@ export const DotRaiting = ({divClass = 'perfect', figClass = 'dot'}) => {
       <figure className={figClass}></figure>
     </div>
   );
-}
+};

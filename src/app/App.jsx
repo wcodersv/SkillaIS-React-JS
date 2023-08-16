@@ -13,9 +13,8 @@ function App() {
       <Layout>
         <Header />
         <Main>
-          <CallGrid><CallRow /></CallGrid>
+          
         </Main>
-
       </Layout>
     </>
   );

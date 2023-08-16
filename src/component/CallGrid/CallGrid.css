@@ -3,5 +3,5 @@
     width: 1440px;
     height: 100px;
     background-color: red;
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-rows: repeat(1,1fr);
 }

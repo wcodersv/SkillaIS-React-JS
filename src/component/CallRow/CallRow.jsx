@@ -1,10 +1,11 @@
 import React from 'react'
-import {IncomingCall} from './ui/TableComponent'
+import './CallRow.css'
+
 
 export const CallRow = () => {
   return (
-      <div>
-          <IncomingCall></IncomingCall>
+      <div className='call_wrapper'>
+          
     </div>
   )
 }

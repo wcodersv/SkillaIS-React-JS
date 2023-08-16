@@ -4,8 +4,6 @@ import Layout from "../layout/Layout";
 import Header from "../layout/Header";
 import Main from "../layout/Main";
 
-
-
 // eslint-disable-next-line require-jsdoc
 
 function App() {
@@ -13,9 +11,7 @@ function App() {
     <>
       <Layout>
         <Header />
-        <Main>
-
-        </Main>
+        <Main></Main>
       </Layout>
     </>
   );

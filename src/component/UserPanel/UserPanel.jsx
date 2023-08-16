@@ -15,13 +15,7 @@ export const UserPanel = () => {
 
     return days[date.getDay()];
   };
-  // const getMonth = (date) => {
-  //   const months = [
-  //     "Янв",
-  //     "Фев",
-  //     "Мар"
-  //   ]
-  // }
+
   const date = new Date();
   const day = new Date().getDay();
   const month = new Date().getMonth();

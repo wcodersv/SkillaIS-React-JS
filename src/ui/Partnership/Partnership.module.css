@@ -1,5 +1,4 @@
 .partnership {
-  color: var(--text-header, #899CB1);
   margin-right: 41px;
 }
 .select{
@@ -16,4 +15,9 @@
 }
 .select:focus {
     outline: none;
+}
+.label{
+  color: var(--text-header, #899CB1);
+text-align: right;
+font-size: 15px;
 }

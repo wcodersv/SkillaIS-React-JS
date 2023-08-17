@@ -1,0 +1,19 @@
+.partnership {
+  color: var(--text-header, #899CB1);
+  margin-right: 41px;
+}
+.select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("./assets/dropdown.svg");
+    width: 18px;
+    height: 21px;
+    background-color: transparent;
+    border: none;
+    margin-top: 21px;
+    margin-left: 4px;
+}
+.select:focus {
+    outline: none;
+}

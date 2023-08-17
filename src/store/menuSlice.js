@@ -1,0 +1,44 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+// Создаем асинхронное действие (thunk) для загрузки данных меню
+export const fetchMenu = createAsyncThunk("menu/fetchMenu", async () => {
+  // Отправляем POST-запрос к API для получения данных меню
+  const response = await fetch("https://api.skilla.ru/partnership/getMenu", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer testtoken`, // Передаем токен в заголовке
+    },
+  });
+  // Преобразуем ответ в формат JSON и возвращаем полученные данные
+  const menu = await response.json();
+  return menu;
+});
+
+// Создаем слайс (часть состояния) для меню
+const menuSlice = createSlice({
+  name: "menu", // Имя слайса
+  initialState: {
+    menu: [], // Начальное состояние: пустой массив для данных меню
+  },
+  reducers: {}, // Редьюсеры для обычных действий (не асинхронных)
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMenu.pending, (state) => {
+        // Обработчик для статуса "запрос в процессе"
+        state.status = "loading"; // Устанавливаем статус загрузки
+        state.error = null; // Сбрасываем ошибку
+      })
+      .addCase(fetchMenu.fulfilled, (state, action) => {
+        // Обработчик для успешного завершения запроса
+        state.status = "succeeded"; // Устанавливаем статус успешного завершения
+        state.menu = action.payload; // Записываем полученные данные в состояние
+      })
+      .addCase(fetchMenu.rejected, (state, action) => {
+        // Обработчик для ошибки при запросе
+        state.status = "failed"; // Устанавливаем статус ошибки
+        state.error = action.error.message; // Записываем сообщение об ошибке
+      });
+  },
+});
+
+export default menuSlice.reducer; // Экспортируем редьюсер из слайса

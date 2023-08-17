@@ -51,7 +51,7 @@ export const Nav = () => {
             ) : (
               <li key={`menu-${menu.name}`} className={style.active_menu}>
                 <img src={imgIcon[menu.name]} alt="" />
-                <a href={menu.url}>{menu.name}</a>
+                <a href="/">{menu.name}</a>
                 <div className={style.activeelem}></div>
               </li>
             ),

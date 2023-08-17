@@ -1,0 +1,50 @@
+.btn {
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.large {
+  width: 200px;
+  height: 48px;
+  padding: 10px 25px;
+  font-size: 16px;
+}
+
+.small {
+  font-size: 14px;
+  width: 122px;
+  height: 40px;
+  padding: 10px 24px;
+}
+
+.blue {
+  color: white;
+  background: var(--ui-accent-active, #274bc8);
+}
+
+.blue:hover {
+  background: var(--ui, #0024cb);
+}
+
+.transperent {
+  color: #0024cb;
+  background: white;
+  border: 1px solid var(--ui-accent-active, #274bc8);
+}
+
+.transperent:hover {
+  color: white;
+  background: var(--ui, #0024cb);
+  border: 1px solid var(--ui-accent-active, #274bc8);
+}
+
+.non {
+  color: #274bc8;
+}
+
+.non {
+  color: #0024cb;
+}

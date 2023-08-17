@@ -11,7 +11,8 @@
 }
 
 form {
-    margin-right: 32px;
+    margin-left: 32px;
+    padding: 20px 0 20px 0;
 }
 
 label {

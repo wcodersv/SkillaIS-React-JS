@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./UserPanel.module.css";
+import { DropDownFilter } from "../../ui/Filters/DropDownFilter/DropDownFilter";
 
 export const UserPanel = () => {
   const getWeekDay = (date) => {

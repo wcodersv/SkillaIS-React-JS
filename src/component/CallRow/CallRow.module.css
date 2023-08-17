@@ -1,0 +1,53 @@
+/* Body row */
+.gridrow {
+    display: grid;
+    grid-template-columns: 53px 86px 130px 326px 214px 420px 130px;
+    height: 65px;
+    align-items: center;
+    border-top: 1px solid #E9EDF3;
+    border-bottom: 1px solid #E9EDF3;
+
+    /* text */
+    color: var(--text, #122945);
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 21px */
+}
+
+/* Сотрудники */
+.employees {
+    display: flex;
+    align-items: center;
+}
+
+/* Пустой блок */
+.block {
+    display: block;
+    width: 44px;
+}
+
+/* Источник */
+.source {
+    color: #5E7793;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 21px */
+}
+
+/* Оценка */
+.grade {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Длительность */
+.duration{
+    text-align: right;
+}

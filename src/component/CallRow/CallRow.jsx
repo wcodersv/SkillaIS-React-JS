@@ -22,7 +22,7 @@ export const CallRow = ({ data }) => {
         <DotRaiting />
         <StatusAssessment />
       </div>
-      <p>00:40</p>
+      <p className={style.duration}>00:40</p>
     </div>
   );
 };

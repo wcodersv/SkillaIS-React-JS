@@ -1,13 +1,13 @@
 import React from "react";
+import style from "./FilterPanel.module.css";
 import { DropDownFilter } from "../../ui/Filters/DropDownFilter/DropDownFilter";
-import s from "./FilterPanel.module.css";
 import { FindCall } from "../../ui/FindCall/FindCall";
 
 export const FilterPanel = () => {
   return (
-    <div className={s.panel}>
+    <div className={style.panel}>
       <FindCall />
-      <div className={s.filters}>
+      <div className={style.filters}>
         <DropDownFilter name="Все типы" />
         <DropDownFilter name="Все сотрудники" />
         <DropDownFilter name="Все звонки" />

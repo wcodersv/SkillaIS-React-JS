@@ -2,6 +2,7 @@
 .body {
     padding-left: 40px;
     background: #FFF;
+    margin-top: 7px;
 
     border-radius: 8px;
     box-shadow: 0px 4px 5px 0px #E9EDF3;
@@ -11,7 +12,7 @@
 .gridheader {
     grid-column: span 7;
     display: grid;
-    grid-template-columns: 53px 86px 130px 326px 214px 460px 130px;
+    grid-template-columns: 53px 86px 130px 326px 214px 440px 130px;
     height: 60px;
 
     /* text */

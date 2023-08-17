@@ -1,7 +1,7 @@
 /* Body row */
 .gridrow {
     display: grid;
-    grid-template-columns: 53px 86px 130px 326px 214px 460px 130px;
+    grid-template-columns: 53px 86px 130px 326px 214px 420px 130px;
     height: 65px;
     align-items: center;
     border-top: 1px solid #E9EDF3;
@@ -45,4 +45,9 @@
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+/* Длительность */
+.duration{
+    text-align: right;
 }

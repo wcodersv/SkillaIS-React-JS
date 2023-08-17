@@ -1,8 +1,13 @@
 .panel {
     display: flex;
     justify-content: space-between;
+    height: 48px;
+    margin-top: 20px;
 }
 
 .filters {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 753px;
 }

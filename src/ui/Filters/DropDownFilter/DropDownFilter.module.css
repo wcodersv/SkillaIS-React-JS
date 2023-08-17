@@ -1,7 +1,9 @@
 .alltype {
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    appearance:none;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
     background-image: url("./dropdown.svg");
     width: 18px;
     height: 21px;
@@ -10,13 +12,14 @@
     margin-left: 4px;
 }
 
-form {
-    margin-right: 32px;
-}
-
 label {
-    font-size: 14px;
     color: var(--text-secondary, #5E7793);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 148%;
+    opacity: 0.87;
+    /* 20.72px */
 }
 
 .alltype:focus {

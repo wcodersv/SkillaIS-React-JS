@@ -1,30 +1,28 @@
 import React from "react";
+import style from "./CallRow.module.css";
 import IncomingCall from "../../ui/TableComponents/IconCall/IncomingCall";
 import Avatar1 from "../../ui/TableComponents/Avatar1";
-import DotRaiting from "../../ui/DotRating";
 import WebIcon from "../../ui/WebIcon";
-
-import "./CallRow.css";
 import StatusAssessment from "../../ui/StatusAssessment";
+import DotRaiting from "../../ui/DotRating";
 
-export const CallRow = () => {
+export const CallRow = ({ data }) => {
   return (
-    <div className="call_wrapper">
+    <div className={style.gridrow}>
       <IncomingCall />
-      <p className="time">19:00</p>
-      <div className="employee_avatar">
+      <p>19:00</p>
+      <div className={style.employees}>
         <Avatar1 />
-      </div>
-      <div className="webicon">
+        <div className={style.block}></div>
         <WebIcon />
       </div>
-      <p className="phone">+7 (987) 567-17-12</p>
-      <p className="source">Rabota.ru</p>
-      <div className="status_raiting">
-        <DotRaiting></DotRaiting>
+      <p>+7 (987) 567-17-12</p>
+      <p className={style.source}>Rabota.ru</p>
+      <div className={style.grade}>
+        <DotRaiting />
         <StatusAssessment />
       </div>
-      <p className="duration">00:40</p>
+      <p className={style.duration}>00:40</p>
     </div>
   );
 };

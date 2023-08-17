@@ -1,12 +1,12 @@
 import React from "react";
-import style from "./User.module.css";
+import style from "./Partnership.module.css";
 
-export const User = () => {
+export const Partnership = () => {
   return (
     <>
-      <div className={style.avatars}>
-        <div className={style.image}></div>
+      <div className={style.partnership}>
         <form action="">
+          <label>ИП Сидорова Александра Михайловна</label>
           <select className={style.select}>
             <option value="#"></option>
           </select>

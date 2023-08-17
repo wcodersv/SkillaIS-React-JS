@@ -4,7 +4,7 @@
     min-height: 65px;
     background-color: #FFF;
     align-items: center;
-    border-bottom: 1px solid #EAF0FA;
+    border-top: 1px solid #EAF0FA;
     padding: 0 40px;
 }
 .status_raiting {
@@ -13,8 +13,15 @@
     width: 106px;
     justify-content: space-between;
 }
+.type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 32px;
+}
 .time {
-    margin-left: 32px;
     margin-right: 48px;
 }
 .employee_avatar{
@@ -29,6 +36,7 @@
 }
 .source {
     margin-right: 135px;
+    color:#5E7793;
 }
 .duration {
     margin-left: auto;

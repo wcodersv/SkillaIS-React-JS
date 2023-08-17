@@ -14,6 +14,7 @@ export const CallGrid = ({ children }) => {
         <p className="duration_title">Длительность</p>
       </div>
       <div className="callgrid">{children}</div>
+      <div className="grid_footer"></div>
     </>
   );
 };

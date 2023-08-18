@@ -11,7 +11,7 @@ export const CallGrid = ({ children }) => {
         <p>Звонок</p>
         <p>Источник</p>
         <p>Оценка</p>
-        <p>Длительность</p>
+        <p className={style.right}>Длительность</p>
       </div>
       {children}
       <div className={style.gridfooter}></div>

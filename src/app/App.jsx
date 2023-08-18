@@ -5,9 +5,10 @@ import Main from "../layout/Main";
 import UserPanel from "../component/UserPanel";
 import FilterPanel from "../component/FilterPanel";
 import CallGrid from "../component/CallGrid";
-import CallRow from "../component/CallRow";
 import { useDispatch } from "react-redux";
 import { fetchMenu } from "../store/menuSlice";
+import { fetchFilters } from "../store/filtersSlice";
+import { Calls } from "../component/Calls/Calls";
 
 /**
  * Application entrypoint
@@ -16,6 +17,7 @@ import { fetchMenu } from "../store/menuSlice";
 function App() {
   const dispatch = useDispatch();
   dispatch(fetchMenu());
+  dispatch(fetchFilters());
 
   return (
     <>
@@ -24,8 +26,7 @@ function App() {
           <UserPanel />
           <FilterPanel />
           <CallGrid>
-            <CallRow />
-            <CallRow />
+            <Calls />
           </CallGrid>
         </Main>
       </Layout>

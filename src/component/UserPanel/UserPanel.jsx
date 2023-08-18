@@ -4,7 +4,6 @@ import Magnifier from "../../ui/Magnifier";
 import User from "../../ui/User";
 import Partnership from "../../ui/Partnership";
 
-
 export const UserPanel = () => {
   const getWeekDay = (date) => {
     const days = [
@@ -51,7 +50,6 @@ export const UserPanel = () => {
 
       <Partnership />
       <User />
-
     </div>
   );
 };

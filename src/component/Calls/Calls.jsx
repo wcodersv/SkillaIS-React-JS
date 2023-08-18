@@ -15,7 +15,7 @@ export const Calls = () => {
             avatar={item.person_avatar}
             time={item.date.slice(10, 16)}
             number={item.partner_data.phone}
-            duration={Math.floor(item.time / 60)}
+            duration={Math.floor(item.time)}
           />
         ))}
     </>

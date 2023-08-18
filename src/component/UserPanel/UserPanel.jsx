@@ -53,12 +53,6 @@ export const UserPanel = () => {
 
       <Partnership />
       <User />
-      <div className={style.partnership}>
-        <Partnership />
-      </div>
-      <div className={style.userlk}>
-        <User />
-      </div>
     </div>
   );
 };

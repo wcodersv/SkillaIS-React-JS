@@ -1,6 +1,11 @@
 .avatar {
     Width: 32px;
     Height: 32px;
-    background-position: center;
-    background-size: cover;
+}
+
+.avatar img {
+    border-radius: 40px;
+    object-fit:cover;
+    width: 32px;
+    height: 32px;
 }

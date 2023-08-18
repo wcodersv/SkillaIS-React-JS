@@ -47,7 +47,6 @@ export const UserPanel = () => {
       <div className={style.magnifier}>
         <Magnifier />
       </div>
-
       <Partnership />
       <User />
     </div>

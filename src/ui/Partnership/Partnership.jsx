@@ -6,7 +6,9 @@ export const Partnership = () => {
     <>
       <div className={style.partnership}>
         <form action="">
-          <label>ИП Сидорова Александра Михайловна</label>
+          <label className={style.label}>
+            ИП Сидорова Александра Михайловна
+          </label>
           <select className={style.select}>
             <option value="#"></option>
           </select>

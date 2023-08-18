@@ -1,16 +1,4 @@
-.avatars {
-  width: 68px;
-  height: 40px;
-  display: flex;
-  margin-top: 12px;
-  margin-right: 115px;
-}
-.image {
-  width: 40px;
-  height: 40px;
-  background-image: url("./assets/img.png");
-}
-/* .select_drop {
+.select_drop {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -27,11 +15,11 @@
   -webkit-appearance: none;
   appearance: none;
   background-image: url("./assets/getup.svg");
-  width: 12px;
-  height: 7.41px;
+  width: 18px;
+  height: 21px;
   background-color: transparent;
   border: none;
-  margin-top: 15px;
+  margin-top: 9px;
   margin-left: 4px;
 }
 .select_drop:focus {
@@ -39,4 +27,4 @@
 }
 .select_up:focus {
    outline: none;
-} */
+}

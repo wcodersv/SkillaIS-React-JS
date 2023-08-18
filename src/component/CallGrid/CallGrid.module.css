@@ -12,7 +12,7 @@
 .gridheader {
     grid-column: span 7;
     display: grid;
-    grid-template-columns: 53px 86px 130px 326px 214px 440px 130px;
+    grid-template-columns: 53px 86px 130px 326px 214px 200px 360px;
     height: 60px;
 
     /* text */
@@ -29,4 +29,8 @@
 /* Footer table */
 .gridfooter {
     height: 57px;
+}
+
+.right{
+    justify-self: end;
 }

@@ -1,18 +1,21 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Создаем асинхронное действие (thunk) для загрузки данных меню
-export const fetchMenu = createAsyncThunk("menu/fetchMenu", async () => {
-  // Отправляем POST-запрос к API для получения данных меню
-  const response = await fetch("https://api.skilla.ru/partnership/getMenu", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer testtoken`, // Передаем токен в заголовке
-    },
-  });
-  // Преобразуем ответ в формат JSON и возвращаем полученные данные
-  const menu = await response.json();
-  return menu;
-});
+export const fetchMenu = createAsyncThunk(
+  "menu/fetchMenu",
+  async ({ TOKEN }) => {
+    // Отправляем POST-запрос к API для получения данных меню
+    const response = await fetch("https://api.skilla.ru/partnership/getMenu", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${TOKEN}`, // Передаем токен в заголовке
+      },
+    });
+    // Преобразуем ответ в формат JSON и возвращаем полученные данные
+    const menu = await response.json();
+    return menu;
+  },
+);
 
 // Создаем слайс (часть состояния) для меню
 const menuSlice = createSlice({

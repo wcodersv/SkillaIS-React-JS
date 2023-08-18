@@ -3,7 +3,7 @@ import style from "./Main.module.css";
 import UserPanel from "../../component/UserPanel";
 import FilterPanel from "../../component/FilterPanel";
 import CallGrid from "../../component/CallGrid";
-import CallRow from "../../component/CallRow";
+import Calls from "../../component/Calls";
 
 export const Main = () => {
   return (
@@ -12,8 +12,7 @@ export const Main = () => {
       <div className={style.main}>
         <FilterPanel />
         <CallGrid>
-          <CallRow />
-          <CallRow />
+          <Calls />
         </CallGrid>
       </div>
     </main>

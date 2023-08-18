@@ -6,23 +6,23 @@ import WebIcon from "../../ui/WebIcon";
 import StatusAssessment from "../../ui/StatusAssessment";
 import DotRaiting from "../../ui/DotRating";
 
-export const CallRow = ({ data }) => {
+export const CallRow = ({ time, avatar, number: phoneNumber, duration }) => {
   return (
     <div className={style.gridrow}>
       <IncomingCall />
-      <p>19:00</p>
+      <p>{time}</p>
       <div className={style.employees}>
-        <Avatar1 />
+        <Avatar1 img={avatar} />
         <div className={style.block}></div>
         <WebIcon />
       </div>
-      <p>+7 (987) 567-17-12</p>
+      <p>{phoneNumber}</p>
       <p className={style.source}>Rabota.ru</p>
       <div className={style.grade}>
         <DotRaiting />
         <StatusAssessment />
       </div>
-      <p className={style.duration}>00:40</p>
+      <p className={style.duration}>{duration}</p>
     </div>
   );
 };

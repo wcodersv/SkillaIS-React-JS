@@ -44,6 +44,7 @@ export const UserPanel = () => {
       <p className={style.date}>
         {getWeekDay(date)}, {day} {getMonth(date)}
       </p>
+      <div className={style.calls}>Тут должна быть аналитика звонков</div>
       <div className={style.magnifier}>
         <Magnifier />
       </div>

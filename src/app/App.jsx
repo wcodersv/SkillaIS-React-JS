@@ -19,7 +19,6 @@ function App() {
   useEffect(() => {
     dispatch(fetchMenu({ TOKEN })); // Передаем TOKEN в виде объекта
   }, [dispatch, TOKEN]);
-  dispatch(fetchMenu());
   dispatch(fetchFilters());
 
   return (

@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-/* eslint-disable react/react-in-jsx-scope */
 import "./styles/global.css";
 import { useDispatch } from "react-redux";
 import { fetchMenu } from "../store/menuSlice";
-import "./styles/global.css";
 import Layout from "../layout/Layout";
 import { fetchFilters } from "../store/filtersSlice";
 

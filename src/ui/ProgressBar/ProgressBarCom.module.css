@@ -1,0 +1,32 @@
+.progressbar {
+    height: 40px;
+    width: 200px;
+}
+
+.text {
+    font-size: 14px;
+    display: flex;
+    color: black;
+}
+
+.textgreen {
+    margin-left: 4px;
+}
+  
+  .container {
+    border-radius: 20px;
+    height: 6px;
+    width: 156px;
+    background-color: #DEE6F5;
+  }
+  
+  .barCompleted {
+    border-radius: 20px;
+    height: 6px;
+    background-color: #28A879;
+    width: 80%;
+  }
+  
+  .label {
+    color: transparent;
+  }

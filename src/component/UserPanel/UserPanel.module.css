@@ -1,22 +1,39 @@
-.conteiner {
-  width: 1440px;
+.container {
+  display: grid;
+  grid-template-columns: 175px 200px 200px 200px 215px 350px 100px;
+  justify-content: center;
+  align-items: center;
+
   height: 64px;
   background: #fff;
   box-shadow: 0px 4px 5px 0px #e9edf3;
-  display: flex;
-  justify-content: space-between;
+
+  /* text */
+  color: var(--text-header, #899CB1);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 148%;
+  /* 22.2px */
+
 }
+
 .date {
   color: var(--text-header, #899cb1);
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 148%;
-  margin-top: 21px;
 }
+
 .magnifier {
-  margin: auto;
-  margin-top: 21px;
-  margin-right: 56px;
-  margin-top: 21px;
+  justify-self: end;
+}
+
+.partnership {
+  justify-self: end;
+}
+
+.userlk{
+  justify-self: end;
 }

@@ -50,9 +50,12 @@ export const UserPanel = () => {
       <div className={style.magnifier}>
         <Magnifier />
       </div>
-
-      <Partnership />
-      <User />
+      <div className={style.partnership}>
+        <Partnership />
+      </div>
+      <div className={style.userlk}>
+        <User />
+      </div>
     </div>
   );
 };

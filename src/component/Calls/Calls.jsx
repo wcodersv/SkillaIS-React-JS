@@ -3,13 +3,13 @@ import { useSelector } from "react-redux";
 import CallRow from "../CallRow";
 
 export const Calls = () => {
-  const filterData = useSelector((state) => state.filters.filters);
-  console.log(filterData.results);
+  const callListData = useSelector((state) => state.calls.calls);
+  console.log(callListData.results);
 
   return (
     <>
-      {filterData.results &&
-        filterData.results.map((item, index) => (
+      {callListData.results &&
+        callListData.results.map((item, index) => (
           <CallRow
             key={index}
             avatar={item.person_avatar}

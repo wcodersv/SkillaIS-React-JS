@@ -3,7 +3,7 @@ import style from "./Main.module.css";
 import UserPanel from "../../component/UserPanel";
 import FilterPanel from "../../component/FilterPanel";
 import CallGrid from "../../component/CallGrid";
-import { Calls } from "../../component/Calls/Calls";
+import Calls from "../../component/Calls";
 
 export const Main = () => {
   return (

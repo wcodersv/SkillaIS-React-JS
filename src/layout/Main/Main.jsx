@@ -9,11 +9,13 @@ export const Main = () => {
   return (
     <main className={style.body}>
       <UserPanel />
-      <FilterPanel />
-      <CallGrid>
-        <CallRow />
-        <CallRow />
-      </CallGrid>
+      <div className={style.main}>
+        <FilterPanel />
+        <CallGrid>
+          <CallRow />
+          <CallRow />
+        </CallGrid>
+      </div>
     </main>
   );
 };

@@ -40,15 +40,22 @@ export const UserPanel = () => {
   const date = new Date();
   const day = new Date().getDate();
   return (
-    <div className={style.conteiner}>
+    <div className={style.container}>
       <p className={style.date}>
         {getWeekDay(date)}, {day} {getMonth(date)}
       </p>
+      <p>Панелька 1</p>
+      <p>Панелька 2</p>
+      <p>Панелька 3</p>
       <div className={style.magnifier}>
         <Magnifier />
       </div>
-      <Partnership />
-      <User />
+      <div className={style.partnership}>
+        <Partnership />
+      </div>
+      <div className={style.userlk}>
+        <User />
+      </div>
     </div>
   );
 };

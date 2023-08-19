@@ -1,21 +1,21 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Создаем асинхронное действие (thunk) для загрузки данных меню
-export const fetchCalls = createAsyncThunk(
-  "calls/fetchCalls",
-  async ({ TOKEN }) => {
-    // Отправляем POST-запрос к API для получения данных меню
-    const response = await fetch("https://api.skilla.ru/mango/getList", {
-      method: "POST",
+export const fetchCalls = createAsyncThunk("calls/fetchCalls", async () => {
+  // Отправляем POST-запрос к API для получения данных меню
+  const response = await fetch(
+    "https://64df4c2a71c3335b258267fa.mockapi.io/employees",
+    {
+      method: "GET",
       headers: {
-        Authorization: `Bearer ${TOKEN}`, // Передаем токен в заголовке
+        "Content-Type": "application/json",
       },
-    });
-    // Преобразуем ответ в формат JSON и возвращаем полученные данные
-    const calls = await response.json();
-    return calls;
-  },
-);
+    },
+  );
+  // Преобразуем ответ в формат JSON и возвращаем полученные данные
+  const calls = await response.json();
+  return calls;
+});
 
 // Создаем слайс (часть состояния) для меню
 const callsSlice = createSlice({

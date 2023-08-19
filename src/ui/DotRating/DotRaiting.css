@@ -1,47 +1,21 @@
-.perfect {
-    width: 28px;
-    height: 8px;
-    display: flex;
-    justify-content: space-between;
-}
 .good {
+    height: 8px;
     width: 28px;
-    height: 8px;
-    display: flex;
-    justify-content: space-between;
-}
-.middle :last-child {
-    opacity: 0;
-}
-.bad {
-    width: 28px;
-    height: 8px;
-    display: flex;
-    justify-content: space-between;
-}
-.bad :nth-child(2) {
-    opacity: 0;
-}
-.bad :last-child{
-    opacity: 0;
-}
-.dot {
-    width: 8px;
-    height: 8px;
-    background-color: #28A879;
-    border-radius: 250px;
-}
-.gray {
-    
-    width: 8px;
-    height: 8px;
-    background-color: #ADBFDF;
-    border-radius: 250px;
+    background-repeat: none;
+    background-position: center;
+    background-image: url('./good_rating.svg');
 }
 
-.red {
-    width: 8px;
+.bad {
     height: 8px;
-    background-color: #ff0000;
-    border-radius: 250px;
+    width: 28px;
+    background-repeat: none;
+    background-image: url('./bad_rating.svg');
+}
+
+.soso {
+    height: 8px;
+    width: 28px;
+    background-repeat: none;
+    background-image: url('./soso_rating.svg');
 }

@@ -16,7 +16,7 @@ function App() {
   // Используем useEffect для загрузки данных меню после монтирования компонента
   useEffect(() => {
     dispatch(fetchMenu({ TOKEN })); // Передаем TOKEN в виде объекта
-    dispatch(fetchCalls({ TOKEN }));
+    dispatch(fetchCalls());
   }, [dispatch, TOKEN]);
 
   return (

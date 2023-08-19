@@ -4,18 +4,21 @@ import CallRow from "../CallRow";
 
 export const Calls = () => {
   const callListData = useSelector((state) => state.calls.calls);
-  console.log(callListData.results);
+  console.log(callListData);
 
   return (
     <>
-      {callListData.results &&
-        callListData.results.map((item, index) => (
+      {callListData &&
+        callListData.map((item, index) => (
           <CallRow
+            source={item.source}
             key={index}
-            avatar={item.person_avatar}
-            time={item.date.slice(10, 16)}
-            number={item.partner_data.phone}
-            duration={Math.floor(item.time)}
+            avatar={item.avatar}
+            number={item.phone}
+            time={item.time.slice(11, 16)}
+            duration={item.duration}
+            status={item.rate}
+            direction={item.calldirect}
           />
         ))}
     </>

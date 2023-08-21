@@ -1,8 +1,3 @@
-.partnership{
-  display: flex;
-  gap: 4px;
-  margin-top: 21px;
-}
 .select {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -13,10 +8,13 @@
   background-color: transparent;
   border: none;
 }
+
 .select:focus {
   outline: none;
 }
-.name {
-  color: var(--text-header, #899cb1);
+
+.label {
+  color: var(--text-header, #899CB1);
+  text-align: right;
   font-size: 15px;
 }

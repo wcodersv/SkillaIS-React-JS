@@ -1,4 +1,57 @@
 .profile {
-  border: 2px solid red;
-  margin-top: 50px;
+  position: absolute;
+  z-index: 1;
+  width: 368px;
+  height: 734px;
+  margin: -8px 0 0 1192px;
+  background: #fff;
+  border: 1px #eaf0fa solid;
+  border-radius: 10px;
+  box-shadow: 4px 16px 50px rgba(129, 135, 163, 0.24);
+  color: var(--text-secondary, #5e7793);
+  font-size: 15px;
+}
+.name {
+  color: var(--text, #122945);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 124%;
+  margin: 20px 0 0 32px;
+}
+.job_city {
+  display: flex;
+  gap: 8px;
+  margin: 6px 0 20px 32px;
+}
+.circle {
+  width: 4px;
+  height: 4px;
+  background-color: var(--ui-icon, #adbfdf);
+  border-radius: 50%;
+  transform: translateY(200%);
+}
+.number_icon {
+  background-image: url("../../icons/calls-24px.svg");
+  width: 16px;
+  height: 16px;
+  margin-left: 30px;
+}
+.text {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.mail_icon {
+  background-image: url("../../icons/mail_outline-24px.svg");
+  width: 16px;
+  height: 16px;
+  margin-left: 31px;
+}
+.line {
+  width: 304px;
+  height: 1px;
+  background: #eaf0fa;
+  margin: 0 auto;
+  margin-top: 8px;
 }

@@ -6,7 +6,7 @@ import CallGrid from "../../component/CallGrid";
 import Calls from "../../component/Calls";
 import Profile from "../../component/Profile";
 
-export const Mainnp = () => {
+export const Main = () => {
   return (
     <main className={style.body}>
       <UserPanel />

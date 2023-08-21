@@ -4,7 +4,7 @@ import style from "./Profile.module.css";
 export const Profile = () => {
   return (
     <div className={style.profile}>
-      <p className={style.name}>Упоров Кирилл</p>
+      <p className={style.name}>Упоров Кирилл.</p>
       <div className={style.job_city}>
         <p>Директор</p>
         <div className={style.circle}></div>

@@ -1,11 +1,10 @@
 import React from "react";
-import AvatarImg from "./avatar.png";
 import "./Avatar1.css";
 
-export const Avatar = ({}) => {
+export const Avatar = ({ img }) => {
   return (
     <div className="avatar">
-      <img src={AvatarImg} alt="avatar" />
+      <img src={img} alt="avatar" />
     </div>
   );
 };

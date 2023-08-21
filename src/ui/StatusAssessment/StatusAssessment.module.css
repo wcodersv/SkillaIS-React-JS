@@ -10,8 +10,10 @@
   font-weight: 400;
   line-height: 100%;
   padding: 6px 8px;
+  text-align: center;
 }
 .good {
+  text-align: center;
   width: 66px;
   height: 26px;
   border-radius: 4px;
@@ -25,6 +27,7 @@
   padding: 6px 8px;
 }
 .great {
+  text-align: center;
   width: 70px;
   height: 26px;
   border-radius: 4px;
@@ -36,4 +39,10 @@
   font-weight: 400;
   line-height: 100%;
   padding: 6px 8px;
+}
+
+.rejected {
+  text-align: center;
+  width: 70px;
+  color:#ea1a4f;
 }

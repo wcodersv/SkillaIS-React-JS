@@ -19,7 +19,7 @@
 }
 
 .date {
-  color: var(--text-header, #899cb1);
+  color: #899cb1;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;

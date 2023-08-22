@@ -3,22 +3,33 @@ import "./styles/global.css";
 import { useDispatch } from "react-redux";
 import { fetchMenu } from "../store/menuSlice";
 import Layout from "../layout/Layout";
-import { fetchCalls } from "../store/callsSlice";
+import Main from "../layout/Main";
+import UserPanel from "../component/UserPanel";
+import FilterPanel from "../component/FilterPanel";
+import CallGrid from "../component/CallGrid";
+import CallRow from "../component/CallRow";
+import React, { useEffect, useState } from "react";
 
 /**
  * Application entrypoint
  * @return {Page} Main page
  */
 function App() {
-  const TOKEN = "testtoken";
-  const dispatch = useDispatch();
-
-  // Используем useEffect для загрузки данных меню после монтирования компонента
+  const [data, setData] = useState([]);
+  const token = "testtoken";
   useEffect(() => {
-    dispatch(fetchMenu({ TOKEN })); // Передаем TOKEN в виде объекта
-    dispatch(fetchCalls());
-  }, [dispatch, TOKEN]);
-
+    // Отправка запроса к API с токеном
+    fetch("https://api.skilla.ru/mango/getList", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`, // Передача токена в заголовке
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error("Ошибка получения данных:", error));
+  }, [token]);
+  console.log(data);
   return (
     <>
       <Layout></Layout>

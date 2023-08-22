@@ -7,7 +7,7 @@ import AddOrderButton from "../../ui/AddOrderButton";
 import time from "../../icons/chart-timeline-variant.svg";
 import order from "../../icons/orders-24px.svg";
 import mail from "../../icons/mail_outline-24px.svg";
-import calls from "../../icons/calls-24px.svg";
+import calls from "../../icons/calls-24px-menu.svg";
 import people from "../../icons/people-24px.svg";
 import document from "../../icons/documents-24px.svg";
 import pidentity from "../../icons/perm_identity_black_24dp.svg";

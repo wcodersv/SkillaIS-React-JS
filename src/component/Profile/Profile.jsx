@@ -1,7 +1,10 @@
 import React from "react";
 import style from "./Profile.module.css";
+import Specialists from "../Specialists";
+import { useSelector } from "react-redux";
 
 export const Profile = () => {
+  const data = useSelector((state) => state.calls.calls);
   return (
     <div className={style.profile}>
       <p className={style.name}>Упоров Кирилл.</p>
@@ -19,6 +22,42 @@ export const Profile = () => {
         <p>hi@skilla.ru</p>
       </div>
       <div className={style.line}></div>
+      <p className={style.specialists}>Операторы</p>
+      {data
+        .filter((el) => el.profession === "operator")
+        .slice(0, 3)
+        .map((el, i) => (
+          <Specialists
+            key={i}
+            avatar={el.avatar}
+            name={el.name}
+            lastname={el.lastname}
+          />
+        ))}
+      <p className={style.specialists}>Логисты</p>
+      {data
+        .filter((el) => el.profession === "logistic")
+        .slice(0, 3)
+        .map((el, i) => (
+          <Specialists
+            key={i}
+            avatar={el.avatar}
+            name={el.name}
+            lastname={el.lastname}
+          />
+        ))}
+      <p className={style.specialists}>Бухгалтеры</p>
+      {data
+        .filter((el) => el.profession === "accountant")
+        .slice(0, 3)
+        .map((el, i) => (
+          <Specialists
+            key={i}
+            avatar={el.avatar}
+            name={el.name}
+            lastname={el.lastname}
+          />
+        ))}
     </div>
   );
 };

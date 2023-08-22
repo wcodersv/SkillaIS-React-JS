@@ -51,38 +51,43 @@ export const UserPanel = () => {
 
   const [userSelect, setUserSelect] = useState(true);
   return (
-    <div className={style.container}>
-      <p className={style.date}>
-        {getWeekDay(date)}, {day} {getMonth(date)}
-      </p>
-      <ProgressBarCom
-        progress={newCallsAndQuality}
-        currentCalls={acceptedCalls.length}
-        totalCalls={callListData.length}
-        text={"Новые звонки"}
-      />
-      <ProgressBarCom
-        persent={Math.floor(newCallsAndQuality)}
-        progress={newCallsAndQuality}
-        color="yellow"
-        prs="persent"
-        text={"Качество разговоров"}
-      />
-      <ProgressBarCom
-        persent={Math.floor(callsQuality)}
-        progress={callsQuality}
-        color="red"
-        prs="persent"
-        text={"Конверсия в заказ"}
-      />
-      <div className={style.magnifier}>
-        <Magnifier />
-      </div>
-      <div className={style.partnership}>
-        <Partnership />
-      </div>
-      <div className={style.userlk}>
-        <User />
+    <div>
+      <div className={style.container}>
+        <p className={style.date}>
+          {getWeekDay(date)}, {day} {getMonth(date)}
+        </p>
+        <ProgressBarCom
+          progress={newCallsAndQuality}
+          currentCalls={acceptedCalls.length}
+          totalCalls={callListData.length}
+          text={"Новые звонки"}
+        />
+        <ProgressBarCom
+          persent={Math.floor(newCallsAndQuality)}
+          progress={newCallsAndQuality}
+          color="yellow"
+          prs="persent"
+          text={"Качество разговоров"}
+        />
+        <ProgressBarCom
+          persent={Math.floor(callsQuality)}
+          progress={callsQuality}
+          color="red"
+          prs="persent"
+          text={"Конверсия в заказ"}
+        />
+        <div className={style.magnifier}>
+          <Magnifier />
+        </div>
+        <div className={style.partnership}>
+          <Partnership />
+        </div>
+        <div className={style.userlk}>
+          <User
+            className={userSelect ? style.select_drop : style.select_up}
+            handler={() => setUserSelect(!userSelect)}
+          />
+        </div>
       </div>
       {
         <div className={userSelect ? style.none : style.block}>

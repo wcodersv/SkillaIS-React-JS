@@ -17,7 +17,6 @@ import settings from "../../icons/settings-24px.svg";
 
 export const Nav = () => {
   const menuData = useSelector((state) => state.menu.menu);
-  console.log(menuData);
 
   const imgIcon = {
     Итоги: time,

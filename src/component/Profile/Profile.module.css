@@ -3,7 +3,7 @@
   z-index: 1;
   width: 368px;
   height: 734px;
-  margin: -8px 0 0 1192px;
+  margin: -8px 0 0 1285px;
   background: #fff;
   border: 1px #eaf0fa solid;
   border-radius: 10px;
@@ -14,9 +14,7 @@
 .name {
   color: var(--text, #122945);
   font-size: 18px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 124%;
   margin: 20px 0 0 32px;
 }
 .job_city {
@@ -53,5 +51,8 @@
   height: 1px;
   background: #eaf0fa;
   margin: 0 auto;
-  margin-top: 8px;
+  margin: 8px 0 -8px 0;
+}
+.specialists {
+  margin: 24px 0 16px 32px;
 }

@@ -19,7 +19,9 @@ export const Main = () => {
   return (
     <main className={style.body}>
       <UserPanel />
+
       {/* <Profile /> */}
+
       <div className={style.main}>
         <div className={style.additional_filtering}>
           <ButtonBalanceIcon />

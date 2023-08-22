@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import Partnership from "../../ui/Partnership";
 import { ProgressBarCom } from "../../ui/ProgressBar/ProgressBarCom";
 import Profile from "../Profile";
-import "./User.css";
 
 export const UserPanel = () => {
   const getWeekDay = (date) => {

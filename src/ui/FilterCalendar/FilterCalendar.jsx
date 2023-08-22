@@ -5,12 +5,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import style from "./FilterCalendar.module.css";
 
 export const FilterCalendar = () => {
-  const [selectedDate, setSelectedDate] = useState(null); // Состояние выбранной даты
-  const [selectedOption, setSelectedOption] = useState("3 дня"); // Состояние выбранной опции
   const [isOptionsVisible, setOptionsVisible] = useState(false); // Состояние видимости опций в выпадающем списке
-  const [startDateInput, setStartDateInput] = useState("__.__.__"); // Состояние для введенной начальной даты
-  const [endDateInput, setEndDateInput] = useState("__.__.__"); // Состояние для введенной конечной даты
-
+  const [selectedOption, setSelectedOption] = useState("3 дня"); // Состояние выбранной опции
+  const [selectedDate, setSelectedDate] = useState(null); // Состояние выбранной даты
   const [startDateRange, setStartDateRange] = useState(null); // Начальная дата диапазона
   const [endDateRange, setEndDateRange] = useState(null); // Конечная дата диапазона
 
@@ -43,18 +40,18 @@ export const FilterCalendar = () => {
   };
 
   const handleCustomDateChange = (date) => {
-    if (!startDateRange) {
+    if (startDateRange == null) {
       setStartDateRange(new Date(date)); // Создаем копию объекта даты
-      setEndDateRange(new Date(date)); // Создаем копию объекта даты
-    } else if (!endDateRange) {
-      if (date < startDateRange) {
+      // setEndDateRange(new Date(date)); // Создаем копию объекта даты
+    } else if (endDateRange == null) {
+      if (new Date(date) < startDateRange) {
         setStartDateRange(new Date(date)); // Создаем копию объекта даты
         setEndDateRange(new Date(startDateRange)); // Создаем копию объекта даты
       } else {
         setEndDateRange(new Date(date)); // Создаем копию объекта даты
       }
     } else {
-      setStartDateRange(new Date(date)); // Создаем копию объекта даты
+      setStartDateRange(null); // Создаем копию объекта даты
       setEndDateRange(null); // Очищаем конечную дату
     }
 
@@ -68,8 +65,6 @@ export const FilterCalendar = () => {
           "dd.MM.yyyy",
         )}`,
       );
-      setStartDateInput(`${format(startDateRange, "dd.MM.yyyy")}`);
-      setEndDateInput(`${format(endDateRange, "dd.MM.yyyy")}`);
     } else {
       setSelectedOption("Выбрать даты");
     }
@@ -123,12 +118,14 @@ export const FilterCalendar = () => {
                 </p>
                 {/* Пользовательский ввод дат */}
                 <p className={style.option}>
-                  <input
-                    type="text"
-                    value={`${startDateInput}-${endDateInput}`}
+                  <span
+                    className={style.dateRange}
                     onClick={() => handleOptionChange("Выбрать даты")}
-                    className={style.dateInput}
-                  />
+                  >
+                    {selectedOption !== "3 дня"
+                      ? selectedOption
+                      : "__.__.__-__.__.__"}
+                  </span>
                   <span className={style.icon_calendar} />
                 </p>
               </div>

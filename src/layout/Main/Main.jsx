@@ -21,7 +21,6 @@ export const Main = () => {
       <UserPanel />
       {/* <Profile /> */}
       <div className={style.main}>
-
         <div className={style.additional_filtering}>
           <ButtonBalanceIcon />
           <FilterCalendar />

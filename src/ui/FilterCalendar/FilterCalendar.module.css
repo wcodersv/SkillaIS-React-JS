@@ -115,7 +115,7 @@
 .option {
     width: 202px;
     height: 40px;
-    padding-left: 20px;
+    padding: 0 10px 0 20px;
     display: flex;
     align-items: center;
 
@@ -146,6 +146,9 @@
     align-items: flex-start;
     color: var(--ui-icon, #ADBFDF);
     letter-spacing: 0.56px;
+    justify-content: space-between;
+
+    font-size: 13px;
 }
 
 
@@ -154,12 +157,6 @@
 
     /* text */
     color: #122945;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-    /* 200% */
 }
 
 /* DatePicker */
@@ -171,7 +168,8 @@
 }
 
 /* Стили для поля ввода даты */
-.dateInput {
+.dateRange {
+    display: block;
     margin: 0;
     padding: 0;
 }

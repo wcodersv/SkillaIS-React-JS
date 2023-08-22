@@ -95,7 +95,8 @@ export const Calls = ({ value }) => {
               key={item.id}
               avatar={item.avatar}
               number={item.phone}
-              time={item.time.slice(11, 16)}
+              // bag по slice
+              time={item.time}
               duration={item.duration}
               status={item.rate}
               direction={item.calldirect}

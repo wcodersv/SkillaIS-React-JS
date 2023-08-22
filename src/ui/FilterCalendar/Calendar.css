@@ -1,0 +1,5 @@
+/* Скрыть стрелку вниз */
+.custom-select__control::after {
+    display: none !important;
+  }
+  

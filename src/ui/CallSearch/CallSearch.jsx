@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./CallSearch.module.css";
-import { CloseButton } from "../CloseButton/CloseButton";
-import { Magnifier } from "../Magnifier/Magnifier";
+import CloseButton from "../CloseButton";
+import Magnifier from "../Magnifier";
 
 export const CallSearch = () => {
   return (

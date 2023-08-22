@@ -1,7 +1,7 @@
 /* Body row */
 .gridrow {
     display: grid;
-    grid-template-columns: 53px 86px 130px 326px 214px 420px 130px;
+    grid-template-columns: 53px 86px 130px 326px 214px 200px 360px;
     height: 65px;
     align-items: center;
     border-top: 1px solid #E9EDF3;

@@ -1,12 +1,16 @@
 import React from "react";
-import s from "./DropDownFilter.module.css";
+import style from "./DropDownFilter.module.css";
 
-export const DropDownFilter = ({ name = "Все типы" }) => {
+export const DropDownFilter = ({ data = [], handler }) => {
+  const render = data.map((item, index) => (
+    <option onChange={handler} key={index} value={item}>
+      {item}
+    </option>
+  ));
   return (
-    <form action="">
-      <label htmlFor="Types">{name}</label>
-      <select className={s.alltype} id="AllTypes">
-        <option value="#"></option>
+    <form className={style.form}>
+      <select className={style.alltype} id="AllTypes">
+        {render}
       </select>
     </form>
   );

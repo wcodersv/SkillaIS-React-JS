@@ -1,6 +1,23 @@
-.body{
+.body {
+    height: 100%;
+    background: #F1F4F9;
+}
+
+.main {
     width: 1440px;
-    height: 100vh;
-    background-color: aqua;
+    padding: 0;
     margin: 0 auto;
+}
+
+
+/* ButtonBalanceIcon & FilterCalendar*/
+.additional_filtering {
+    margin-top: 20px;
+    display: grid;
+    gap: 2%;
+    grid-template-columns: 160px auto;
+
+    justify-content: flex-end;
+    align-items: center;
+
 }

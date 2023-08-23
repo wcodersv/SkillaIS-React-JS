@@ -176,7 +176,7 @@ export const FilterCalendar = ({ handleDateRangeChange }) => {
                     selectedOption !== "Неделя" &&
                     selectedOption !== "Месяц" &&
                     selectedOption !== "Год"
-                      ? selectedOption
+                      ? selectedDateRangeText
                       : "__.__.__-__.__.__"}
                   </span>
                   <span className={style.icon_calendar} />

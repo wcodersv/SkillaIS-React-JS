@@ -4,7 +4,7 @@ import { subDays, subMonths, subYears, format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import style from "./FilterCalendar.module.css";
 
-export const FilterCalendar = ({ filterCalendar }) => {
+export const FilterCalendar = ({ handleDateRangeChange }) => {
   const [isOptionsVisible, setOptionsVisible] = useState(false); // Состояние видимости опций в выпадающем списке
   const [selectedOption, setSelectedOption] = useState("3 дня"); // Состояние выбранной опции
   const [selectedDate, setSelectedDate] = useState(null); // Состояние выбранной даты
@@ -48,6 +48,7 @@ export const FilterCalendar = ({ filterCalendar }) => {
 
     setStartDateRange(newStartDate);
     setEndDateRange(newEndDate);
+    handleDateRangeChange(newStartDate, newEndDate);
   };
 
   // Обработчик изменения пользовательской даты
@@ -78,10 +79,11 @@ export const FilterCalendar = ({ filterCalendar }) => {
         "dd.MM.yyyy",
       )}`,
     );
-    filterCalendar(startDateRange, endDateRange);
 
     setDatePickerVisible(!isDatePickerVisible);
   };
+  console.log("startDateRange", startDateRange);
+  console.log("endDateRange", endDateRange);
 
   return (
     <div className={style.custom_select}>
@@ -163,7 +165,13 @@ export const FilterCalendar = ({ filterCalendar }) => {
             inline={isDatePickerVisible} // Режим встроенного отображения
             className={style.customDatePicker} // Применяемый класс стилей для DatePicker
           />
-          <button onClick={handleDateRange} className={style.btn_ok}>
+          <button
+            onClick={() => {
+              handleDateRange();
+              handleDateRangeChange(startDateRange, endDateRange);
+            }}
+            className={style.btn_ok}
+          >
             OK
           </button>
         </div>

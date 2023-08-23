@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import style from "./UserPanel.module.css";
 import Magnifier from "../../ui/Magnifier";
 import User from "../../ui/User";
-import Partnership from "../../ui/Partnership";
+// import Partnership from "../../ui/Partnership";
 import { ProgressBarCom } from "../../ui/ProgressBar/ProgressBarCom";
 import Profile from "../Profile";
 
@@ -80,9 +80,10 @@ export const UserPanel = () => {
           <Magnifier />
         </div>
         <div className={style.partnership}>
-          <Partnership
+          ИП Сидорова Александра Михайловна
+          {/* <Partnership
             className={userSelect ? style.select_drop : style.select_up}
-          />
+          /> */}
         </div>
         <div className={style.userlk}>
           <User

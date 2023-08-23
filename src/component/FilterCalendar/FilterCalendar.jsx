@@ -1,52 +1,56 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import DatePicker from "react-datepicker";
-import { addDays, addWeeks, addMonths, addYears, format } from "date-fns";
+import { subDays, subMonths, subYears, format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import style from "./FilterCalendar.module.css";
 
-export const FilterCalendar = () => {
-  const callListData = useSelector((state) => state.calls.calls);
-
-  console.log("FilterCalendar", callListData);
+export const FilterCalendar = ({ filterCalendar }) => {
   const [isOptionsVisible, setOptionsVisible] = useState(false); // Состояние видимости опций в выпадающем списке
   const [selectedOption, setSelectedOption] = useState("3 дня"); // Состояние выбранной опции
   const [selectedDate, setSelectedDate] = useState(null); // Состояние выбранной даты
   const [startDateRange, setStartDateRange] = useState(null); // Начальная дата диапазона
   const [endDateRange, setEndDateRange] = useState(null); // Конечная дата диапазона
-  const [isDatePickerVisible, setDatePickerVisible] = useState(false);
+  const [isDatePickerVisible, setDatePickerVisible] = useState(false); // Определяет, виден ли календарь
 
   // Обработчик изменения опции
   const handleOptionChange = (option) => {
     setSelectedOption(option);
-    setOptionsVisible(false); // Скрываем опции после выбора
-    setDatePickerVisible(!isDatePickerVisible);
-    setStartDateRange(null); // Создаем копию объекта даты
-    setEndDateRange(null); // Очищаем конечную дату
+    setOptionsVisible(false); // Скрыть опции после выбора
+    setDatePickerVisible(!isDatePickerVisible); // Переключить видимость календаря
+    setStartDateRange(null); // Сбросить начальную дату диапазона
+    setEndDateRange(null); // Сбросить конечную дату диапазона
 
-    let newDate;
+    let newStartDate;
+    let newEndDate;
 
     // Определение новой даты в зависимости от выбранной опции
     switch (option) {
-      case "3days":
-        newDate = addDays(new Date(), 3);
+      case "3 дня":
+        newStartDate = subDays(new Date(), 3);
+        newEndDate = new Date(); // Сегодняшняя дата
         break;
-      case "1week":
-        newDate = addWeeks(new Date(), 1);
+      case "Неделя":
+        newStartDate = subDays(new Date(), 7);
+        newEndDate = new Date();
         break;
-      case "1month":
-        newDate = addMonths(new Date(), 1);
+      case "Месяц":
+        newStartDate = subMonths(new Date(), 1);
+        newEndDate = new Date();
         break;
-      case "1year":
-        newDate = addYears(new Date(), 1);
+      case "Год":
+        newStartDate = subYears(new Date(), 1);
+        newEndDate = new Date();
         break;
       default:
-        newDate = null;
+        newStartDate = null;
+        newEndDate = null;
     }
 
-    setSelectedDate(newDate);
+    setStartDateRange(newStartDate);
+    setEndDateRange(newEndDate);
   };
 
+  // Обработчик изменения пользовательской даты
   const handleCustomDateChange = (date) => {
     if (startDateRange == null) {
       setStartDateRange(new Date(date)); // Создаем копию объекта даты
@@ -65,13 +69,17 @@ export const FilterCalendar = () => {
     setSelectedDate(date);
   };
 
+  // Обработчик выбора диапазона дат
   const handleDateRange = () => {
+    // Обновить выбранную опцию с диапазоном дат в формате "Начало-Конец"
     setSelectedOption(
       `${format(startDateRange, "dd.MM.yyyy")}-${format(
         endDateRange,
         "dd.MM.yyyy",
       )}`,
     );
+    filterCalendar(startDateRange, endDateRange);
+
     setDatePickerVisible(!isDatePickerVisible);
   };
 
@@ -127,7 +135,10 @@ export const FilterCalendar = () => {
                     className={style.dateRange}
                     onClick={() => handleOptionChange("Выбрать даты")}
                   >
-                    {selectedOption !== "3 дня"
+                    {selectedOption !== "3 дня" &&
+                    selectedOption !== "Неделя" &&
+                    selectedOption !== "Месяц" &&
+                    selectedOption !== "Год"
                       ? selectedOption
                       : "__.__.__-__.__.__"}
                   </span>

@@ -1,20 +1,22 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CallRow from "../CallRow";
+import style from "./Calls.module.css";
 
-export const Calls = ({ value }) => {
-  const callListData = useSelector((state) => state.calls.calls);
+export const Calls = ({ value, startDate, endDate }) => {
+  // Получаем текущую дату и время
   const date = new Date();
   const year = date.getFullYear();
-  const hour = date.getHours();
-  const min = date.getMinutes();
-  let month = date.getMonth() + 1;
-  if (month < 10) {
-    month = "0" + month;
-  }
-  const day = date.getDate();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const hour = String(date.getHours()).padStart(2, "0");
+  const min = String(date.getMinutes()).padStart(2, "0");
   const now = `${year}-${month}-${day} ${hour}:${min}`;
 
+  // Получаем данные о звонках из Redux
+  const callListData = useSelector((state) => state.calls.calls);
+
+  // Добавляем примерные данные о звонках для демонстрации с сегодняшним днем
   const resultData = [
     ...callListData,
     {
@@ -47,61 +49,87 @@ export const Calls = ({ value }) => {
     },
   ];
 
-  const resarr = resultData.filter((item) => item.time === now);
+  // Фильтруем данные звонков на основе введенного значения
+  const filteredResults = resultData.filter(
+    (item) =>
+      (item.name && item.name.toLowerCase().trim().includes(value.trim())) ||
+      (item.source &&
+        item.source.toLowerCase().trim().includes(value.trim())) ||
+      (item.phone && item.phone.toLowerCase().trim().includes(value.trim())),
+  );
 
-  console.log(resarr);
-  console.log(resultData[0].time.slice(0, 10));
+  // Сортируем отфильтрованные звонки по времени в обратном порядке
+  const filteredCalls = filteredResults.sort(
+    (a, b) => new Date(b.time) - new Date(a.time),
+  ); // Сортировка в обратном порядке
 
-  const total = resultData.filter((item) => item.time != now);
+  // -----------------------------------
+  // const filteredCalls = filteredResults.filter((item) => {
+  //   // Фильтрация по имени, источнику и номеру телефона
+  // }).filter((item) => {
+  //   // Фильтрация по датам
+  //   if (startDate && endDate) {
+  //     const callTime = new Date(item.time);
+  //     return callTime >= startDate && callTime <= endDate;
+  //   }
+  //   return true;
+  // }).sort((a, b) => {
+  //   // Сортировка звонков
+  // });
+
+  // Группировка и отображение звонков
+
+  // ---------------------------------------
+
+  // Объект для группировки записей по датам
+  const groupedCalls = {};
+
+  // Группируем звонки по датам
+  filteredCalls.forEach((item) => {
+    if (!item.time) {
+      return;
+    }
+
+    // Извлекаем дату из времени звонка
+    const callDate = item.time.substr(0, 10);
+
+    // Создаем массив для данной даты, если его нет
+    if (!groupedCalls[callDate]) {
+      groupedCalls[callDate] = [];
+    }
+    groupedCalls[callDate].push(item);
+  });
 
   return (
     <>
-      {resultData &&
-        resultData
-          .filter(
-            (item) =>
-              item.name.toLowerCase().trim().includes(value.trim()) ||
-              item.source.toLowerCase().trim().includes(value.trim()) ||
-              item.phone.toLowerCase().trim().includes(value.trim()),
-          )
-          .filter((item) => item.time === now)
-          .map((item) => (
+      {/* Отображаем звонки сгруппированные по датам */}
+      {Object.keys(groupedCalls).map((date) => (
+        <div key={date}>
+          {/* Выводим дату с количеством звонков */}
+          <h2
+            className={style.title}
+            style={date === `${year}-${month}-${day}` ? { marginTop: "0" } : {}}
+          >
+            {/* Заголовок даты, если дата совпадает с сегодняшним днем, выводим "Сегодня" */}
+            {date === `${year}-${month}-${day}` ? "Сегодня" : date}
+            <sup className={style.sup}>{groupedCalls[date].length}</sup>
+          </h2>
+
+          {/* Отображаем детали каждого звонка */}
+          {groupedCalls[date].map((item) => (
             <CallRow
               source={item.source}
               key={item.id}
               avatar={item.avatar}
               number={item.phone}
-              time={item.time.slice(11, 16)}
+              time={item.time ? item.time.substr(11, 5) : ""}
               duration={item.duration}
               status={item.rate}
               direction={item.calldirect}
             />
           ))}
-      <div style={{ margin: 10 }}>
-        yesterday <sup style={{ color: "#899CB1" }}>{total.length}</sup>
-      </div>
-      {resultData &&
-        resultData
-          .filter(
-            (item) =>
-              item.name.toLowerCase().trim().includes(value.trim()) ||
-              item.source.toLowerCase().trim().includes(value.trim()) ||
-              item.phone.toLowerCase().trim().includes(value.trim()),
-          )
-          .filter((item) => item.time != now)
-          .map((item) => (
-            <CallRow
-              source={item.source}
-              key={item.id}
-              avatar={item.avatar}
-              number={item.phone}
-              // bag по slice
-              time={item.time}
-              duration={item.duration}
-              status={item.rate}
-              direction={item.calldirect}
-            />
-          ))}
+        </div>
+      ))}
     </>
   );
 };

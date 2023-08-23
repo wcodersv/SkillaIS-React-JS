@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import { subDays, subMonths, subYears, format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
@@ -16,6 +16,38 @@ export const FilterCalendar = ({ handleDateRangeChange }) => {
 
   // Варианты опций
   const options = ["3 дня", "Неделя", "Месяц", "Год", "Выбрать даты"];
+
+  // ~Функция для установки начальных значений в зависимости от выбранной опции
+  const setInitialDateValues = (option) => {
+    let newStartDate;
+    let newEndDate;
+
+    switch (option) {
+      case "3 дня":
+        newStartDate = subDays(new Date(), 3);
+        newEndDate = new Date();
+        break;
+      case "Неделя":
+        newStartDate = subDays(new Date(), 7);
+        newEndDate = new Date();
+        break;
+      case "Месяц":
+        newStartDate = subMonths(new Date(), 1);
+        newEndDate = new Date();
+        break;
+      case "Год":
+        newStartDate = subYears(new Date(), 1);
+        newEndDate = new Date();
+        break;
+      default:
+        newStartDate = null;
+        newEndDate = null;
+    }
+
+    setStartDateRange(newStartDate);
+    setEndDateRange(newEndDate);
+    handleDateRangeChange(newStartDate, newEndDate);
+  };
 
   // Переключение на следующую опцию - Вправо кнопка
   const nextOption = () => {
@@ -39,49 +71,24 @@ export const FilterCalendar = ({ handleDateRangeChange }) => {
     setSelectedDateRangeText("");
   };
 
-  // !Обработчик изменения опции
+  // ~Обработчик изменения выбранной опции
   const handleOptionChange = (option) => {
     setSelectedOption(option);
-    setOptionsVisible(false); // Скрыть опции после выбора
-    setDatePickerVisible(option === "Выбрать даты"); // Показать календарь, если выбрана опция "Выбрать даты"
-    setStartDateRange(null); // Сбросить начальную дату диапазона
-    setEndDateRange(null); // Сбросить конечную дату диапазона
+    setOptionsVisible(false);
+    setDatePickerVisible(option === "Выбрать даты");
+    setStartDateRange(null);
+    setEndDateRange(null);
 
-    let newStartDate;
-    let newEndDate;
-
-    // Определение новой даты в зависимости от выбранной опции
-    switch (option) {
-      case "3 дня":
-        newStartDate = subDays(new Date(), 3);
-        newEndDate = new Date(); // Сегодняшняя дата
-        break;
-      case "Неделя":
-        newStartDate = subDays(new Date(), 7);
-        newEndDate = new Date();
-        break;
-      case "Месяц":
-        newStartDate = subMonths(new Date(), 1);
-        newEndDate = new Date();
-        break;
-      case "Год":
-        newStartDate = subYears(new Date(), 1);
-        newEndDate = new Date();
-        break;
-      default:
-        newStartDate = null;
-        newEndDate = null;
-    }
-
-    setStartDateRange(newStartDate);
-    setEndDateRange(newEndDate);
-    handleDateRangeChange(newStartDate, newEndDate);
-
-    setSelectedOption(option);
+    setInitialDateValues(option);
     setSelectedOptionIndex(options.indexOf(option));
   };
 
-  // !Обработчик изменения пользовательской даты
+  // Хук для установки начальных значений даты при изменении выбранной опции
+  useEffect(() => {
+    setInitialDateValues(selectedOption);
+  }, [selectedOption]);
+
+  // ~Обработчик изменения пользовательской даты
   const handleCustomDateChange = (date) => {
     if (startDateRange == null) {
       setStartDateRange(new Date(date)); // Создаем копию объекта даты
@@ -100,7 +107,7 @@ export const FilterCalendar = ({ handleDateRangeChange }) => {
     setSelectedDate(date);
   };
 
-  // ! Обработчик выбора диапазона дат
+  // ~Обработчик выбора диапазона дат
   const handleDateRange = () => {
     let rangeText = "";
 

@@ -1,7 +1,6 @@
 .avatars {
-  width: 68px;
-  height: 40px;
   display: flex;
+  align-items: center;
 }
 .image {
   width: 40px;

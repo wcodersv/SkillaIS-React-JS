@@ -1,6 +1,21 @@
-.list{
+.list {
   display: flex;
+  align-items: center;
   gap: 12px;
-  margin-left: 32px;
-  margin-bottom: 16px;
+  width: 315px;
+  height: 48px;
+  margin: 0 0 8px 31px;
+}
+.hover:hover {
+  background-color: #c0c9f3;
+}
+.text {
+  color: var(--ui, #0024cb);
+}
+.entrance{
+margin-left: auto;
+display: block;
+}
+.entrance:hover{
+display: none;
 }

@@ -3,3 +3,8 @@
   height: 16px;
   background-image: url("./assets/magnifier.svg");
 }
+.magnifier:hover{
+    width: 16px;
+  height: 16px;
+  background-image: url("./assets/magnifier_blue.svg");
+}

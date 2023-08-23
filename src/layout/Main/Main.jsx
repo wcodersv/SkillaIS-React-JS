@@ -5,14 +5,22 @@ import FilterPanel from "../../component/FilterPanel";
 import CallGrid from "../../component/CallGrid";
 import Calls from "../../component/Calls";
 import ButtonBalanceIcon from "../../ui/ButtonBalanceIcon";
-import FilterCalendar from "../../ui/FilterCalendar";
+import FilterCalendar from "../../component/FilterCalendar";
 
 export const Main = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); // Состояние для хранения значения фильтрации Input (FindCall)
 
+  // Обработчик изменения значения фильтрации
   const changer = (evt) => {
     setValue(evt.target.value);
-    console.log(value);
+  };
+
+  const [selectedStartDate, setSelectedStartDate] = useState(null);
+  const [selectedEndDate, setSelectedEndDate] = useState(null);
+
+  const handleDateRangeChange = (startDate, endDate) => {
+    setSelectedStartDate(startDate);
+    setSelectedEndDate(endDate);
   };
 
   return (
@@ -21,12 +29,16 @@ export const Main = () => {
       <div className={style.main}>
         <div className={style.additional_filtering}>
           <ButtonBalanceIcon />
-          <FilterCalendar />
+          <FilterCalendar filterCalendar={handleDateRangeChange} />
         </div>
         <FilterPanel handler={changer} value={value} />
 
         <CallGrid>
-          <Calls value={value} />
+          <Calls
+            value={value}
+            startDate={selectedStartDate}
+            endDate={selectedEndDate}
+          />
         </CallGrid>
       </div>
     </main>

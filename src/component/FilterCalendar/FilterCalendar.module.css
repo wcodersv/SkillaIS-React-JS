@@ -1,8 +1,14 @@
+/* Обертка для кастомного селекта */
 .custom_select {
     text-align: center;
     cursor: pointer;
+
+    position: relative;
+    top: 0;
+    right: 0;
 }
 
+/* Заголовок селекта и кнопки навигации */
 .select_header {
     display: flex;
     justify-content: flex-end;
@@ -10,18 +16,21 @@
     gap: 12px;
 }
 
+/* Контейнер для иконки и текста селекта */
 .container {
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
+/* Изменение иконки при наведении на контейнер */
 .container:hover .icon_calendar {
     background-image: url('../../icons/icon-calendar_active.svg');
     width: 16px;
     height: 18px;
 }
 
+/* Иконка календаря */
 .icon_calendar {
     display: block;
     margin: 0;
@@ -30,37 +39,42 @@
     height: 18px;
 }
 
+/* Стили кнопок-стрелок */
 .btn_arrow {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
+/* Стили кнопки влево */
 .arrow_left {
     background-image: url('../../icons/keyboard_arrow_left.svg');
     width: 17px;
     height: 24px;
 }
 
+/* Изменение кнопки влево при наведении */
 .arrow_left:hover {
     background-image: url('../../icons/keyboard_arrow_left_active.svg');
     width: 17px;
     height: 24px;
 }
 
+/* Стили кнопки вправо */
 .arrow_right {
     background-image: url('../../icons/keyboard_arrow_right.svg');
     width: 17px;
     height: 24px;
 }
 
+/* Изменение кнопки вправо при наведении */
 .arrow_right:hover {
     background-image: url('../../icons/keyboard_arrow_right_active.svg');
     width: 17px;
     height: 24px;
 }
 
-
+/* Стили для div селекта */
 .select {
     color: var(--ui-accent, #002CFB);
     text-align: right;
@@ -75,10 +89,11 @@
     right: 0;
 }
 
+/* Стили для опций селекта */
 .options {
     display: block;
     width: 204px;
-    height: 239px;
+    /* height: 239px; */
     flex-shrink: 0;
     border-radius: 4px;
     border: 1px solid #EAF0FA;
@@ -88,7 +103,7 @@
     /* выпадающее меню */
     box-shadow: 0px 0px 26px 0px rgba(233, 237, 243, 0.80);
 
-    /* Чтобы меню было поверх остального содержимого */
+    /* Позиционирование меню */
     position: absolute;
     top: 25px;
     right: -30px;
@@ -96,10 +111,11 @@
 
 }
 
+/* Стили для опции - строка */
 .option {
     width: 202px;
     height: 40px;
-    padding-left: 20px;
+    padding: 0 10px 0 20px;
     display: flex;
     align-items: center;
 
@@ -114,7 +130,8 @@
     /* 200% */
 }
 
-.option:last-child {
+/* Стили для предпоследней опции */
+.option:nth-last-child(2) {
     color: rgba(18, 41, 69, 0.87);
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -124,15 +141,56 @@
     /* 200% */
 }
 
+/* Стили для последней опции */
+.option:last-child {
+    align-items: flex-start;
+    color: var(--ui-icon, #ADBFDF);
+    letter-spacing: 0.56px;
+    justify-content: space-between;
+
+    font-size: 13px;
+}
+
+
 .option:hover {
     background: rgba(0, 44, 251, 0.13);
 
     /* text */
     color: #122945;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-    /* 200% */
+}
+
+/* DatePicker */
+.datePickerWrapper {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    z-index: 90;
+}
+
+/* Стили для поля ввода даты */
+.dateRange {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.btn_ok {
+    margin: 0;
+    padding: 10px 15px;
+    width: 242.242px;
+    background-color: #fff;
+    border: 1px solid #aeaeae;
+    border-radius: 0.3rem;
+    cursor: pointer;
+
+    /* text */
+    color: #000;
+    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    font-weight: bold;
+}
+
+.btn_ok:hover{
+    background-color: #f0f0f0;
+
+    color: #000;
 }

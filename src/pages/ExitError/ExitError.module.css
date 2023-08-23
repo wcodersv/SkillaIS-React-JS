@@ -1,0 +1,49 @@
+.error {
+  background-color: rgb(241, 244, 249);
+  color: #091336;
+  font-family: monospace;
+  font-size: 30px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notfound {
+  width: 70ch;
+  height: 25ch;
+  background-color: rgb(241, 244, 249);
+}
+
+.row {
+  text-align: left;
+}
+
+.centered {
+  text-align: center;
+}
+
+.inverted {
+  background-color: #FFD500;
+}
+
+.shadow {
+  background-color: #091336;
+}
+
+.blink {
+  animation: blinkingText 0.8s infinite;
+}
+
+@keyframes blinkingText {
+  0% {
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

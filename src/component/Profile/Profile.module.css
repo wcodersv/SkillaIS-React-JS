@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 1;
   width: 368px;
-  height: 734px;
+  height: 745px;
   margin: -8px 0 0 1285px;
   background: #fff;
   border: 1px #eaf0fa solid;
@@ -10,6 +10,7 @@
   box-shadow: 4px 16px 50px rgba(129, 135, 163, 0.24);
   color: var(--text-secondary, #5e7793);
   font-size: 15px;
+  display: block;
 }
 .name {
   color: var(--text, #122945);
@@ -51,9 +52,16 @@
   height: 1px;
   background: #eaf0fa;
   margin: 0 auto;
-  margin: 8px 0 16px 0;
+  margin: 16px 0 16px 0;
 }
 .specialists {
   margin-left: 32px;
   margin-bottom: 8px;
+}
+.exit {
+  position: absolute;
+  margin: 21px 0 0 318px;
+  width: 18px;
+  height: 18px;
+  background-image: url("./Exit.svg");
 }

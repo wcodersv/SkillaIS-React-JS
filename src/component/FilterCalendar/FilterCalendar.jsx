@@ -13,6 +13,7 @@ export const FilterCalendar = ({ handleDateRangeChange }) => {
   const [isDatePickerVisible, setDatePickerVisible] = useState(false); // Видимость календаря
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0); // Индекс выбранной опции
   const [selectedDateRangeText, setSelectedDateRangeText] = useState(""); // Текст выбранного диапазона дат
+  const [isFiltered, setIsFiltered] = useState(false); // Состояние для стилей, на активный
 
   // Варианты опций
   const options = ["3 дня", "Неделя", "Месяц", "Год", "Выбрать даты"];
@@ -78,6 +79,7 @@ export const FilterCalendar = ({ handleDateRangeChange }) => {
 
     setSelectedOption(option);
     setSelectedOptionIndex(options.indexOf(option));
+    setIsFiltered(true);
   };
 
   // !Обработчик изменения пользовательской даты
@@ -138,7 +140,7 @@ export const FilterCalendar = ({ handleDateRangeChange }) => {
             onClick={() => setOptionsVisible(!isOptionsVisible)}
           >
             {/* Активный элемент - шапка */}
-            <span>
+            <span className={`${isFiltered ? style.filtered : ""}`}>
               {selectedOption === "Выбрать даты"
                 ? ""
                 : options[selectedOptionIndex]}

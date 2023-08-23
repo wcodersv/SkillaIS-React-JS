@@ -6,7 +6,7 @@ import CallGrid from "../../component/CallGrid";
 // import Profile from "../../component/Profile";
 import Calls from "../../component/Calls";
 import ButtonBalanceIcon from "../../ui/ButtonBalanceIcon";
-import FilterCalendar from "../../ui/FilterCalendar";
+import FilterCalendar from "../../component/FilterCalendar";
 
 export const Main = () => {
   const [value, setValue] = useState("");

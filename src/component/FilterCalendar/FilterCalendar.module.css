@@ -173,3 +173,24 @@
     margin: 0;
     padding: 0;
 }
+
+.btn_ok {
+    margin: 0;
+    padding: 10px 15px;
+    width: 242.242px;
+    background-color: #fff;
+    border: 1px solid #aeaeae;
+    border-radius: 0.3rem;
+    cursor: pointer;
+
+    /* text */
+    color: #000;
+    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    font-weight: bold;
+}
+
+.btn_ok:hover{
+    background-color: #f0f0f0;
+
+    color: #000;
+}

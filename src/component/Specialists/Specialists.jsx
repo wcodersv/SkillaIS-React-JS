@@ -4,12 +4,13 @@ import Avatar from "../../ui/TableComponents/Avatar1";
 
 export const Specialists = ({ avatar, name, lastname }) => {
   return (
-    <div>
+    <div className={style.hover}>
       <div className={style.list}>
         <Avatar img={avatar} />
-        <div>
+        <div className={style.text}>
           {name} {lastname}
         </div>
+        <a className={style.entrance} href="/exit"></a>
       </div>
     </div>
   );

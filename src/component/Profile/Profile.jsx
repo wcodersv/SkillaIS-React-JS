@@ -7,6 +7,7 @@ export const Profile = () => {
   const data = useSelector((state) => state.calls.calls);
   return (
     <div className={style.profile}>
+      <a className={style.exit} href="/exit"></a>
       <p className={style.name}>Упоров Кирилл.</p>
       <div className={style.job_city}>
         <p>Директор</p>

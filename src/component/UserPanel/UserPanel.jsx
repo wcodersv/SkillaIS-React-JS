@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import style from "./UserPanel.module.css";
 import Magnifier from "../../ui/Magnifier";
 import User from "../../ui/User";
-import { useSelector } from "react-redux";
 import Partnership from "../../ui/Partnership";
 import { ProgressBarCom } from "../../ui/ProgressBar/ProgressBarCom";
 import Profile from "../Profile";

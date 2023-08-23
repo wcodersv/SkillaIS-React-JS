@@ -12,6 +12,7 @@
 .text {
   color: var(--ui, #0024cb);
 }
+
 .entrance{
 margin-left: auto;
 display: block;

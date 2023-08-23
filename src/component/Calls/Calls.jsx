@@ -49,37 +49,28 @@ export const Calls = ({ value, startDate, endDate }) => {
     },
   ];
 
-  // Фильтруем данные звонков на основе введенного значения
-  const filteredResults = resultData.filter(
-    (item) =>
-      (item.name && item.name.toLowerCase().trim().includes(value.trim())) ||
-      (item.source &&
-        item.source.toLowerCase().trim().includes(value.trim())) ||
-      (item.phone && item.phone.toLowerCase().trim().includes(value.trim())),
-  );
-
-  // Сортируем отфильтрованные звонки по времени в обратном порядке
-  const filteredCalls = filteredResults.sort(
-    (a, b) => new Date(b.time) - new Date(a.time),
-  ); // Сортировка в обратном порядке
-
-  // -----------------------------------
-  // const filteredCalls = filteredResults.filter((item) => {
-  //   // Фильтрация по имени, источнику и номеру телефона
-  // }).filter((item) => {
-  //   // Фильтрация по датам
-  //   if (startDate && endDate) {
-  //     const callTime = new Date(item.time);
-  //     return callTime >= startDate && callTime <= endDate;
-  //   }
-  //   return true;
-  // }).sort((a, b) => {
-  //   // Сортировка звонков
-  // });
-
-  // Группировка и отображение звонков
-
-  // ---------------------------------------
+  const filteredCalls = resultData
+    .filter((item) => {
+      // Фильтрация по имени, источнику и номеру телефона
+      return (
+        (item.name && item.name.toLowerCase().trim().includes(value.trim())) ||
+        (item.source &&
+          item.source.toLowerCase().trim().includes(value.trim())) ||
+        (item.phone && item.phone.toLowerCase().trim().includes(value.trim()))
+      );
+    })
+    .filter((item) => {
+      // Фильтрация по датам
+      if (startDate && endDate) {
+        const callTime = new Date(item.time);
+        return callTime >= startDate && callTime <= endDate;
+      }
+      return true;
+    })
+    .sort((a, b) => {
+      // Сортируем отфильтрованные звонки по времени в обратном порядке
+      return new Date(b.time) - new Date(a.time);
+    });
 
   // Объект для группировки записей по датам
   const groupedCalls = {};

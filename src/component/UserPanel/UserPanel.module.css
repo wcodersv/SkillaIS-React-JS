@@ -44,8 +44,6 @@
   background-image: url("./assets/dropdown.svg");
   width: 18px;
   height: 21px;
-  margin-top: 9px;
-  margin-left: 4px;
 }
 .select_drop:hover {
   background-image: url("./assets/dropdown_blue.svg");
@@ -56,6 +54,4 @@
   background-image: url("./assets/getup.svg");
   width: 18px;
   height: 21px;
-  margin-top: 9px;
-  margin-left: 4px;
 }

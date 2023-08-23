@@ -80,7 +80,9 @@ export const UserPanel = () => {
           <Magnifier />
         </div>
         <div className={style.partnership}>
-          <Partnership />
+          <Partnership
+            className={userSelect ? style.select_drop : style.select_up}
+          />
         </div>
         <div className={style.userlk}>
           <User

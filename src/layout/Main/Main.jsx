@@ -9,15 +9,15 @@ import FilterCalendar from "../../component/FilterCalendar";
 
 export const Main = () => {
   const [value, setValue] = useState(""); // Состояние для хранения значения фильтрации Input (FindCall)
+  const [selectedStartDate, setSelectedStartDate] = useState(null); // Состояние начальной даты диапазона (FilterCalendar)
+  const [selectedEndDate, setSelectedEndDate] = useState(null); // Состояние конечной даты диапазона (FilterCalendar)
 
   // Обработчик изменения значения фильтрации
   const changer = (evt) => {
     setValue(evt.target.value);
   };
 
-  const [selectedStartDate, setSelectedStartDate] = useState(null);
-  const [selectedEndDate, setSelectedEndDate] = useState(null);
-
+  // Обработчик изменения даты диапазона
   const handleDateRangeChange = (startDate, endDate) => {
     setSelectedStartDate(startDate);
     setSelectedEndDate(endDate);
@@ -29,7 +29,7 @@ export const Main = () => {
       <div className={style.main}>
         <div className={style.additional_filtering}>
           <ButtonBalanceIcon />
-          <FilterCalendar filterCalendar={handleDateRangeChange} />
+          <FilterCalendar handleDateRangeChange={handleDateRangeChange} />
         </div>
         <FilterPanel handler={changer} value={value} />
 

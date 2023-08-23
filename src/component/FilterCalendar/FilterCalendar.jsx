@@ -4,25 +4,51 @@ import { subDays, subMonths, subYears, format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import style from "./FilterCalendar.module.css";
 
-export const FilterCalendar = ({ filterCalendar }) => {
+export const FilterCalendar = ({ handleDateRangeChange }) => {
   const [isOptionsVisible, setOptionsVisible] = useState(false); // Состояние видимости опций в выпадающем списке
   const [selectedOption, setSelectedOption] = useState("3 дня"); // Состояние выбранной опции
   const [selectedDate, setSelectedDate] = useState(null); // Состояние выбранной даты
   const [startDateRange, setStartDateRange] = useState(null); // Начальная дата диапазона
   const [endDateRange, setEndDateRange] = useState(null); // Конечная дата диапазона
-  const [isDatePickerVisible, setDatePickerVisible] = useState(false); // Определяет, виден ли календарь
+  const [isDatePickerVisible, setDatePickerVisible] = useState(false); // Видимость календаря
+  const [selectedOptionIndex, setSelectedOptionIndex] = useState(0); // Индекс выбранной опции
+  const [selectedDateRangeText, setSelectedDateRangeText] = useState(""); // Текст выбранного диапазона дат
 
-  // Обработчик изменения опции
+  // Варианты опций
+  const options = ["3 дня", "Неделя", "Месяц", "Год", "Выбрать даты"];
+
+  // Переключение на следующую опцию - Вправо кнопка
+  const nextOption = () => {
+    setSelectedOptionIndex((prevIndex) => (prevIndex + 1) % options.length);
+    setSelectedOption(options[(selectedOptionIndex + 1) % options.length]);
+    handleOptionChange(options[(selectedOptionIndex + 1) % options.length]);
+    setSelectedDateRangeText(""); // Сброс текста выбранного диапазона дат
+  };
+
+  // Переключение на предыдущую опцию - Влево кнопка
+  const prevOption = () => {
+    setSelectedOptionIndex(
+      (prevIndex) => (prevIndex - 1 + options.length) % options.length,
+    );
+    setSelectedOption(
+      options[(selectedOptionIndex - 1 + options.length) % options.length],
+    );
+    handleOptionChange(
+      options[(selectedOptionIndex - 1 + options.length) % options.length],
+    );
+    setSelectedDateRangeText("");
+  };
+
+  // !Обработчик изменения опции
   const handleOptionChange = (option) => {
     setSelectedOption(option);
     setOptionsVisible(false); // Скрыть опции после выбора
-    setDatePickerVisible(!isDatePickerVisible); // Переключить видимость календаря
+    setDatePickerVisible(option === "Выбрать даты"); // Показать календарь, если выбрана опция "Выбрать даты"
     setStartDateRange(null); // Сбросить начальную дату диапазона
     setEndDateRange(null); // Сбросить конечную дату диапазона
 
     let newStartDate;
     let newEndDate;
-
     // Определение новой даты в зависимости от выбранной опции
     switch (option) {
       case "3 дня":
@@ -48,9 +74,13 @@ export const FilterCalendar = ({ filterCalendar }) => {
 
     setStartDateRange(newStartDate);
     setEndDateRange(newEndDate);
+    handleDateRangeChange(newStartDate, newEndDate);
+
+    setSelectedOption(option);
+    setSelectedOptionIndex(options.indexOf(option));
   };
 
-  // Обработчик изменения пользовательской даты
+  // !Обработчик изменения пользовательской даты
   const handleCustomDateChange = (date) => {
     if (startDateRange == null) {
       setStartDateRange(new Date(date)); // Создаем копию объекта даты
@@ -65,70 +95,68 @@ export const FilterCalendar = ({ filterCalendar }) => {
       setStartDateRange(null); // Создаем копию объекта даты
       setEndDateRange(null); // Очищаем конечную дату
     }
-
     setSelectedDate(date);
   };
 
-  // Обработчик выбора диапазона дат
+  // ! Обработчик выбора диапазона дат
   const handleDateRange = () => {
-    // Обновить выбранную опцию с диапазоном дат в формате "Начало-Конец"
-    setSelectedOption(
-      `${format(startDateRange, "dd.MM.yyyy")}-${format(
+    let rangeText = "";
+
+    if (startDateRange && endDateRange) {
+      rangeText = `${format(startDateRange, "dd.MM.yyyy")} - ${format(
         endDateRange,
         "dd.MM.yyyy",
-      )}`,
-    );
-    filterCalendar(startDateRange, endDateRange);
+      )}`;
+    } else if (startDateRange) {
+      rangeText = `${format(startDateRange, "dd.MM.yyyy")} - __.__.__`;
+    } else if (endDateRange) {
+      rangeText = `__.__.__ - ${format(endDateRange, "dd.MM.yyyy")}`;
+    } else {
+      rangeText = "Выбрать даты";
+    }
 
+    setSelectedDateRangeText(rangeText);
+
+    handleDateRangeChange(startDateRange, endDateRange);
     setDatePickerVisible(!isDatePickerVisible);
   };
 
   return (
     <div className={style.custom_select}>
       <div className={style.select_header}>
-        <button className={`${style.btn_arrow} ${style.arrow_left}`}></button>
+        {/* Кнопка влево */}
+        <button
+          className={`${style.btn_arrow} ${style.arrow_left}`}
+          onClick={prevOption}
+        ></button>
+
+        {/* Выпадающий список */}
         <div className={style.container}>
           <span className={style.icon_calendar} />
-
-          {/* Выпадающий список */}
           <div
             className={style.select}
             onClick={() => setOptionsVisible(!isOptionsVisible)}
           >
-            <span>{selectedOption}</span>
+            {/* Активный элемент - шапка */}
+            <span>
+              {selectedOption === "Выбрать даты"
+                ? ""
+                : options[selectedOptionIndex]}
+              {selectedDateRangeText}
+            </span>
+            {/* Опции */}
             {isOptionsVisible && (
               <div className={style.options}>
                 {/* Предустановленные варианты диапазонов */}
-                <p
-                  className={style.option}
-                  onClick={() => handleOptionChange("3 дня")}
-                >
-                  3 дня
-                </p>
-                <p
-                  className={style.option}
-                  onClick={() => handleOptionChange("Неделя")}
-                >
-                  Неделя
-                </p>
-                <p
-                  className={style.option}
-                  onClick={() => handleOptionChange("Месяц")}
-                >
-                  Месяц
-                </p>
-                <p
-                  className={style.option}
-                  onClick={() => handleOptionChange("Год")}
-                >
-                  Год
-                </p>
-                <p
-                  className={style.option}
-                  onClick={() => handleOptionChange("Выбрать даты")}
-                >
-                  Указать даты
-                </p>
+                {options.map((option) => (
+                  <p
+                    key={option}
+                    className={style.option}
+                    onClick={() => handleOptionChange(option)}
+                  >
+                    {option}
+                  </p>
+                ))}
                 {/* Пользовательский ввод дат */}
                 <p className={style.option}>
                   <span
@@ -139,7 +167,7 @@ export const FilterCalendar = ({ filterCalendar }) => {
                     selectedOption !== "Неделя" &&
                     selectedOption !== "Месяц" &&
                     selectedOption !== "Год"
-                      ? selectedOption
+                      ? selectedDateRangeText
                       : "__.__.__-__.__.__"}
                   </span>
                   <span className={style.icon_calendar} />
@@ -148,8 +176,11 @@ export const FilterCalendar = ({ filterCalendar }) => {
             )}
           </div>
         </div>
-
-        <button className={`${style.btn_arrow} ${style.arrow_right}`}></button>
+        {/* Кнопка вправо */}
+        <button
+          className={`${style.btn_arrow} ${style.arrow_right}`}
+          onClick={nextOption}
+        ></button>
       </div>
 
       {/* Отображение выбора пользовательской даты */}
@@ -163,7 +194,13 @@ export const FilterCalendar = ({ filterCalendar }) => {
             inline={isDatePickerVisible} // Режим встроенного отображения
             className={style.customDatePicker} // Применяемый класс стилей для DatePicker
           />
-          <button onClick={handleDateRange} className={style.btn_ok}>
+          <button
+            onClick={() => {
+              handleDateRange();
+              handleDateRangeChange(startDateRange, endDateRange);
+            }}
+            className={style.btn_ok}
+          >
             OK
           </button>
         </div>

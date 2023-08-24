@@ -3,7 +3,15 @@ import { useSelector } from "react-redux";
 import CallRow from "../CallRow";
 import style from "./Calls.module.css";
 
-export const Calls = ({ value, startDate, endDate }) => {
+export const Calls = ({
+  value,
+  startDate,
+  endDate,
+  selectedCallType,
+  selectedExecutor,
+  selectedSource,
+  selectedRating,
+}) => {
   // Получаем текущую дату и время
   const date = new Date();
   const year = date.getFullYear();
@@ -44,12 +52,29 @@ export const Calls = ({ value, startDate, endDate }) => {
       duration: "3:23",
       rate: "good",
       phone: "+7(980)788-132-297",
-      calldirect: "incoming",
+      calldirect: "outcoming",
       profession: "operator",
     },
   ];
 
   const filteredCalls = resultData
+    .filter((item) => {
+      // Фильтрация по датам
+      if (startDate && endDate) {
+        const callTime = new Date(item.time);
+        return callTime >= startDate && callTime <= endDate;
+      }
+      return true;
+    })
+    .filter((item) => {
+      // Фильтрация по типу звонка
+      if (selectedCallType === "Входящие") {
+        return item.calldirect === "incoming";
+      } else if (selectedCallType === "Исходящие") {
+        return item.calldirect === "outcoming";
+      }
+      return true; // Показать все типы при выборе "Все типы"
+    })
     .filter((item) => {
       // Фильтрация по имени, источнику и номеру телефона
       return (
@@ -60,15 +85,28 @@ export const Calls = ({ value, startDate, endDate }) => {
       );
     })
     .filter((item) => {
-      // Фильтрация по датам
-      if (startDate && endDate) {
-        const callTime = new Date(item.time);
-        return callTime >= startDate && callTime <= endDate;
+      // Фильтрация по исполнителю
+      if (selectedExecutor !== "Все сотрудники") {
+        return item.name === selectedExecutor;
+      }
+      return true; // Показать все исполнителей при выборе "Все сотрудники"
+    })
+    .filter((item) => {
+      // Фильтрация по источнику звонка
+      if (selectedSource !== "Все источники") {
+        return item.source === selectedSource;
+      }
+      return true;
+    })
+    .filter((item) => {
+      // Фильтрация по оценке звонка
+      if (selectedRating !== "Все оценки") {
+        return item.rate === selectedRating;
       }
       return true;
     })
     .sort((a, b) => {
-      // Сортируем отфильтрованные звонки по времени в обратном порядке
+      // Сортировка отфильтрованных звонков по времени в обратном порядке
       return new Date(b.time) - new Date(a.time);
     });
 
@@ -90,6 +128,9 @@ export const Calls = ({ value, startDate, endDate }) => {
     }
     groupedCalls[callDate].push(item);
   });
+
+  console.log(groupedCalls);
+  console.log("-------------------------------");
 
   return (
     <>

@@ -16,14 +16,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-right: 20px;
 }
 
 
 .btnReset {
     background-color: transparent;
     border: none;
-    color: #5E7793;
     text-align: right;
+
+    /* text */
+    color: var(--text-secondary, #5E7793);
+    opacity: 0.87;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 148%;
+    /* 20.72px */
+
+    cursor: pointer;
 }
 
 .spanReset {
@@ -39,6 +52,6 @@
     background-image: url("../../icons/close_active.svg");
 }
 
-.btnContainer:hover .btnReset{
+.btnContainer:hover .btnReset {
     color: #002CFB;
 }

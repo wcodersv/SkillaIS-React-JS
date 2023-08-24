@@ -72,14 +72,15 @@ export const FilterPanel = ({
           selectedValue={selectedExecutor}
         />
 
+        {/* НЕТ ИНФОРМАЦИИ В API */}
         {/* Фильтр для видов звонков */}
-        <DropDownFilter
+        {/* <DropDownFilter
           data={[
             "Все звонки",
             "Звонки от исполнителей",
             "Звонки от заказчиков",
           ]}
-        />
+        /> */}
 
         {/* Фильтр для источников звонков */}
         <DropDownFilter
@@ -95,8 +96,9 @@ export const FilterPanel = ({
           selectedValue={selectedRating}
         />
 
+        {/* НЕТ ИНФОРМАЦИИ В API */}
         {/* Фильтр для ошибок звонков */}
-        <DropDownFilter data={["Все ошибки", "Отклоненные", "Очень плохо"]} />
+        {/* <DropDownFilter data={["Все ошибки", "Отклоненные", "Очень плохо"]} /> */}
       </div>
     </div>
   );

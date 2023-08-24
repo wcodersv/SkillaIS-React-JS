@@ -9,28 +9,35 @@ export const DropDownFilter = ({ data = [], handler, selectedValue }) => {
     setOptionsVisible(false); // Закрыть выпадающий список после выбора
   };
 
+  const isActiveFilter =
+    selectedValue !== "Все типы" && selectedValue !== "Все источники"; // Здесь проверяем, активен ли фильтр
+
   return (
     <div className={style.container}>
       {/* Активный элемент */}
       <div
-        className={style.header}
+        className={`${isActiveFilter ? style.filtered : style.header}`}
         onClick={() => {
-          handleOptionClick(selectedValue);
           setOptionsVisible(!isOptionsVisible);
         }}
       >
         {selectedValue}
+        <div
+          className={isOptionsVisible ? style.select_up : style.select_drop}
+        ></div>
       </div>
       {/* Опции */}
       {isOptionsVisible && (
         <div className={style.options}>
           {data.map((item, index) => (
             <div
-              key={index}
+              key={`${index}-dropdownfilter`}
               className={`${style.option} ${
                 selectedValue === item ? style.selected : ""
               }`}
-              onClick={() => handleOptionClick(item)}
+              onClick={() => {
+                handleOptionClick(item);
+              }}
             >
               {item}
             </div>

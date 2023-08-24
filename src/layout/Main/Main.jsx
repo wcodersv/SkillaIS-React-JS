@@ -61,8 +61,11 @@ export const Main = () => {
           value={value}
           selectedCallType={selectedCallType}
           setSelectedCallType={setSelectedCallType}
+          selectedExecutor={selectedExecutor}
           setSelectedExecutor={setSelectedExecutor}
+          selectedSource={selectedSource}
           setSelectedSource={setSelectedSource}
+          selectedRating={selectedRating}
           setSelectedRating={setSelectedRating}
           filtersActive={hasActiveFilters} // Передаем флаг активных фильтров в FilterPanel
         />

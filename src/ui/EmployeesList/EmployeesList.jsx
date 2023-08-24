@@ -4,29 +4,25 @@ import Avatar from "../TableComponents/Avatar1";
 
 export const EmployeesList = ({ data, handler, selectedValue }) => {
   const [isOptionsVisible, setOptionsVisible] = useState(false); // Состояние видимости опций в выпадающем списке
+  const [isFiltered, setIsFiltered] = useState(false); // Состояние для стилей, на активный
   const [lastName, setLastName] = useState("");
 
   const handleOptionClick = (item) => {
     handler(item);
-    setLastName(""); // Сбрасываем имя сотрудника при выборе опции
+    setIsFiltered(true);
     setOptionsVisible(false); // Закрыть выпадающий список после выбора
   };
-
-  const isActiveFilter = selectedValue !== "Все сотрудники"; // Здесь проверяем, активен ли фильтр
 
   return (
     <div className={style.container}>
       {/* Активный элемент */}
       <div
-        className={`${isActiveFilter ? style.filtered : style.header}`}
+        className={`${isFiltered ? style.filtered : style.header}`}
         onClick={() => {
           setOptionsVisible(!isOptionsVisible);
         }}
       >
         {`${selectedValue} ${lastName}`}
-        <div
-          className={isOptionsVisible ? style.select_up : style.select_drop}
-        ></div>
       </div>
       {/* Опции */}
       {isOptionsVisible && (
@@ -37,6 +33,7 @@ export const EmployeesList = ({ data, handler, selectedValue }) => {
             onClick={() => {
               {
                 setLastName("");
+                setIsFiltered(false);
                 handleOptionClick("Все сотрудники");
               }
             }}

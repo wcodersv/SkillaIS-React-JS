@@ -20,6 +20,7 @@
 }
 
 .header {
+    display: flex;
     background-color: transparent;
     border: none;
     text-align: right;
@@ -27,6 +28,11 @@
 }
 
 .filtered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* text */
     color: #002CFB;
     text-align: right;
     font-family: 'Roboto', sans-serif;
@@ -44,11 +50,10 @@
 .options {
     display: block;
     width: 230px;
-    max-height: 48vh;
+    max-height: 330px;
     /* Максимальная высота контейнера */
     overflow-y: auto;
     /* Добавляем вертикальную прокрутку при необходимости */
-
 
     flex-shrink: 0;
     border-radius: 4px;
@@ -64,11 +69,6 @@
     top: 25px;
     right: -30px;
     z-index: 100;
-}
-
-.options.list::-webkit-scrollbar {
-    background-color: #dedbdb;
-    width: 10px;
 }
 
 /* Стили для опции - строка */
@@ -121,4 +121,23 @@
     line-height: 28px;
     text-align: left;
     /* 200% */
+}
+
+/* для стрелок вниз/наверх */
+.select_drop {
+    background-image: url("../../icons/upDown/dropdown.svg");
+    width: 18px;
+    height: 21px;
+}
+
+.select_drop:hover {
+    background-image: url("../../icons/upDown/dropdown_blue.svg");
+    width: 18px;
+    height: 21px;
+}
+
+.select_up {
+    background-image: url("../../icons/upDown/getup.svg");
+    width: 18px;
+    height: 21px;
 }

@@ -12,20 +12,45 @@ export const FilterPanel = ({ handler, value }) => {
     <div className={style.panel}>
       <FindCall handler={handler} value={value} />
       <div className={style.filters}>
-        <DropDownFilter data={["Все типы", "Входящие", "Исходящие"]} />
-        <DropDownFilter data={["Все исполнители", ...employees]} />
+        {/* Фильтр для типов звонков */}
         <DropDownFilter
+          data={["Все типы", "Входящие", "Исходящие"]}
+          handler={setSelectedCallType}
+          selectedValue={selectedCallType}
+        />
+
+        {/* Фильтр по сотрудникам */}
+        <EmployeesList
+          data={[...uniqueFilteredEmployees]}
+          handler={(selected) => setSelectedExecutor(selected)}
+          selectedValue={selectedExecutor}
+        />
+
+        {/* НЕТ ИНФОРМАЦИИ В API */}
+        {/* Фильтр для видов звонков */}
+        {/* <DropDownFilter
           data={[
             "Все звонки",
             "Звонки от исполнителей",
             "Звонки от заказчиков",
           ]}
-        />
+        /> */}
+
+        {/* Фильтр для источников звонков */}
         <DropDownFilter
           data={["Все источники", "Facebook", "Google", "Balloons", "Yandex"]}
         />
-        <DropDownFilter data={["Все оценки", "Хорошо", "Плохо", "Средне"]} />
-        <DropDownFilter data={["Все ошибки", "Отклоненные", "Очень плохо"]} />
+
+        {/* Фильтр для оценок звонков */}
+        <DropDownFilter
+          data={["Все оценки", ...rateSet]}
+          handler={(selected) => setSelectedRating(selected)}
+          selectedValue={selectedRating}
+        />
+
+        {/* НЕТ ИНФОРМАЦИИ В API */}
+        {/* Фильтр для ошибок звонков */}
+        {/* <DropDownFilter data={["Все ошибки", "Отклоненные", "Очень плохо"]} /> */}
       </div>
     </div>
   );

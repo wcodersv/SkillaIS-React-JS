@@ -4,6 +4,7 @@
     background-repeat: none;
     background-position: center;
     background-image: url('./good_rating.svg');
+    margin-right: 10px;
 }
 
 .bad {
@@ -11,6 +12,7 @@
     width: 28px;
     background-repeat: none;
     background-image: url('./bad_rating.svg');
+    margin-right: 10px;
 }
 
 .soso {
@@ -18,4 +20,5 @@
     width: 28px;
     background-repeat: none;
     background-image: url('./soso_rating.svg');
+    margin-right: 10px;
 }

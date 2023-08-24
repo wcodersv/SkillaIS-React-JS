@@ -42,7 +42,7 @@ export const CallRow = ({
 
       {/* Отображение оценки статуса */}
       <div className={style.grade}>
-        {/* Отображение точечной оценки (возможно, рейтинг) */}
+        {/* Отображение точечной оценки */}
         <DotRaiting rate={status} />
         {/* Отображение текстовой оценки статуса */}
         <StatusAssessment rate={status} text={status} />

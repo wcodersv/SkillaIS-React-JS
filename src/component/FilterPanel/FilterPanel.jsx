@@ -3,7 +3,8 @@ import style from "./FilterPanel.module.css";
 import { DropDownFilter } from "../../ui/Filters/DropDownFilter/DropDownFilter";
 import { FindCall } from "../../ui/FindCall/FindCall";
 import { useSelector } from "react-redux";
-import { EmployeesList } from "../../ui/EmployeesList/EmployeesList";
+import EmployeesList from "../../ui/EmployeesList";
+import RatingList from "../../ui/RatingList/";
 
 export const FilterPanel = ({
   handleInputChange,
@@ -72,6 +73,20 @@ export const FilterPanel = ({
           selectedValue={selectedExecutor}
         />
 
+        {/* Фильтр для источников звонков */}
+        <DropDownFilter
+          data={["Все источники", ...sourceSet]}
+          handler={(selected) => setSelectedSource(selected)}
+          selectedValue={selectedSource}
+        />
+
+        {/* Фильтр для оценок звонков */}
+        <RatingList
+          data={[...rateSet]}
+          handler={(selected) => setSelectedRating(selected)}
+          selectedValue={selectedRating}
+        />
+
         {/* НЕТ ИНФОРМАЦИИ В API */}
         {/* Фильтр для видов звонков */}
         {/* <DropDownFilter
@@ -81,20 +96,6 @@ export const FilterPanel = ({
             "Звонки от заказчиков",
           ]}
         /> */}
-
-        {/* Фильтр для источников звонков */}
-        <DropDownFilter
-          data={["Все источники", ...sourceSet]}
-          handler={(selected) => setSelectedSource(selected)}
-          selectedValue={selectedSource}
-        />
-
-        {/* Фильтр для оценок звонков */}
-        <DropDownFilter
-          data={["Все оценки", ...rateSet]}
-          handler={(selected) => setSelectedRating(selected)}
-          selectedValue={selectedRating}
-        />
 
         {/* НЕТ ИНФОРМАЦИИ В API */}
         {/* Фильтр для ошибок звонков */}

@@ -3,6 +3,7 @@ import style from "./FilterPanel.module.css";
 import { DropDownFilter } from "../../ui/Filters/DropDownFilter/DropDownFilter";
 import { FindCall } from "../../ui/FindCall/FindCall";
 import { useSelector } from "react-redux";
+import { EmployeesList } from "../../ui/EmployeesList/EmployeesList";
 
 export const FilterPanel = ({
   handleInputChange,
@@ -10,18 +11,29 @@ export const FilterPanel = ({
   value,
   selectedCallType,
   setSelectedCallType,
+  selectedExecutor,
   setSelectedExecutor,
+  selectedSource,
   setSelectedSource,
+  selectedRating,
   setSelectedRating,
   filtersActive,
 }) => {
   // Получаем данные о записях из Redux-состояния
   const dataCalls = useSelector((state) => state.calls.calls);
-
   // Извлекаем имена сотрудников из данных
-  const employees = new Set(
-    dataCalls.map((item) => item.name).filter((item) => item),
+  const employeesSet = new Set(
+    dataCalls
+      .filter((item) => item.name && item.avatar && item.lastname)
+      .map(({ name, avatar, lastname }) =>
+        JSON.stringify({ name, avatar, lastname }),
+      ),
   );
+
+  const uniqueFilteredEmployees = Array.from(employeesSet)
+    .map((str) => JSON.parse(str))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   // Извлекаем источники звонков из данных
   const sourceSet = new Set(
     dataCalls.map((item) => item.source).filter((item) => item),
@@ -53,10 +65,11 @@ export const FilterPanel = ({
           selectedValue={selectedCallType}
         />
 
-        {/* Фильтр для исполнителей */}
-        <DropDownFilter
-          data={["Все сотрудники", ...employees]}
+        {/* Фильтр по сотрудникам */}
+        <EmployeesList
+          data={[...uniqueFilteredEmployees]}
           handler={(selected) => setSelectedExecutor(selected)}
+          selectedValue={selectedExecutor}
         />
 
         {/* Фильтр для видов звонков */}
@@ -72,12 +85,14 @@ export const FilterPanel = ({
         <DropDownFilter
           data={["Все источники", ...sourceSet]}
           handler={(selected) => setSelectedSource(selected)}
+          selectedValue={selectedSource}
         />
 
         {/* Фильтр для оценок звонков */}
         <DropDownFilter
           data={["Все оценки", ...rateSet]}
           handler={(selected) => setSelectedRating(selected)}
+          selectedValue={selectedRating}
         />
 
         {/* Фильтр для ошибок звонков */}

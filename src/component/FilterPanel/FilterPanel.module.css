@@ -11,3 +11,34 @@
     justify-content: space-between;
     width: 753px;
 }
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btnReset {
+    background-color: transparent;
+    border: none;
+    color: #5E7793;
+    text-align: right;
+}
+
+.spanReset {
+    display: block;
+    background-image: url("../../icons/close.svg");
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.btnContainer:hover .spanReset {
+    cursor: pointer;
+    background-image: url("../../icons/close_active.svg");
+}
+
+.btnContainer:hover .btnReset{
+    color: #002CFB;
+}

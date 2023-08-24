@@ -1,22 +1,30 @@
-/* eslint-disable react/react-in-jsx-scope */
-import s from "./StatusAssessment.module.css";
+import React from "react";
+import style from "./StatusAssessment.module.css";
 
 export const StatusAssessment = ({ rate, text }) => {
-  let callRate = s.great;
+  let callRate = style.great;
+  let textRange = "";
 
   if (rate === "good") {
-    callRate = s.great;
+    callRate = style.great;
+    textRange = "Отлично";
   } else if (rate === "bad") {
-    callRate = s.bad;
+    callRate = style.bad;
+    textRange = "Плохо";
   } else if (rate === "soso") {
-    callRate = s.good;
+    callRate = style.good;
+    textRange = "Хорошо";
+  } else if (rate === "rejected") {
+    callRate = style.rejected;
+    textRange = "Отклоненный";
   } else {
-    callRate = s.rejected;
+    callRate = style.other_range;
+    textRange = text;
   }
 
   return (
     <>
-      <p className={callRate}>{text}</p>
+      <p className={callRate}>{textRange}</p>
     </>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
 import style from "./FilterPanel.module.css";
-import { DropDownFilter } from "../../ui/Filters/DropDownFilter/DropDownFilter";
-import { FindCall } from "../../ui/FindCall/FindCall";
+import FilterDropdown from "../../ui/FilterDropdown";
+import FilterCallSearch from "../../ui/FilterCallSearch";
 import { useSelector } from "react-redux";
-import EmployeesList from "../../ui/EmployeesList";
-import RatingList from "../../ui/RatingList/";
+import FilterEmployeesList from "../../ui/FilterEmployeesList";
+import FilterRatingsDropdown from "../../ui/FilterRatingsDropdown";
 
 export const FilterPanel = ({
   handleInputChange,
@@ -48,7 +48,7 @@ export const FilterPanel = ({
   return (
     <div className={style.panel}>
       {/* Компонент для поиска звонка */}
-      <FindCall handler={handleInputChange} value={value} />
+      <FilterCallSearch handler={handleInputChange} value={value} />
 
       {/* Кнопка Сбросить фильтры */}
       {filtersActive && (
@@ -60,28 +60,28 @@ export const FilterPanel = ({
 
       <div className={style.filters}>
         {/* Фильтр для типов звонков */}
-        <DropDownFilter
+        <FilterDropdown
           data={["Все типы", "Входящие", "Исходящие"]}
           handler={setSelectedCallType}
           selectedValue={selectedCallType}
         />
 
         {/* Фильтр по сотрудникам */}
-        <EmployeesList
+        <FilterEmployeesList
           data={[...uniqueFilteredEmployees]}
           handler={(selected) => setSelectedExecutor(selected)}
           selectedValue={selectedExecutor}
         />
 
         {/* Фильтр для источников звонков */}
-        <DropDownFilter
+        <FilterDropdown
           data={["Все источники", ...sourceSet]}
           handler={(selected) => setSelectedSource(selected)}
           selectedValue={selectedSource}
         />
 
         {/* Фильтр для оценок звонков */}
-        <RatingList
+        <FilterRatingsDropdown
           data={[...rateSet]}
           handler={(selected) => setSelectedRating(selected)}
           selectedValue={selectedRating}

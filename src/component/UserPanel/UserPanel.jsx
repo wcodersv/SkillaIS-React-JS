@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import style from "./UserPanel.module.css";
-import Magnifier from "../../ui/Magnifier";
+import SearchTool from "../../ui/SearchTool";
 import User from "../../ui/User";
 // import Partnership from "../../ui/Partnership";
-import { ProgressBarCom } from "../../ui/ProgressBar/ProgressBarCom";
+import CallsStatisticsBar from "../../ui/CallsStatisticsBar";
 import Profile from "../Profile";
 
 export const UserPanel = () => {
+  const [userSelect, setUserSelect] = useState(true);
+  const callListData = useSelector((state) => state.calls.calls);
+
   const getWeekDay = (date) => {
     const days = [
       "Воскресенье",
@@ -41,7 +44,6 @@ export const UserPanel = () => {
   const date = new Date();
   const day = new Date().getDate();
 
-  const callListData = useSelector((state) => state.calls.calls);
   const acceptedCalls = callListData.filter(
     (item) => item.rate === "good" || item.rate == "soso",
   );
@@ -49,27 +51,26 @@ export const UserPanel = () => {
   const newCallsAndQuality = (acceptedCalls.length / callListData.length) * 100;
   const callsQuality = (conversionCalls.length / callListData.length) * 100;
 
-  const [userSelect, setUserSelect] = useState(true);
   return (
     <div>
       <div className={style.container}>
         <p className={style.date}>
           {getWeekDay(date)}, {day} {getMonth(date)}
         </p>
-        <ProgressBarCom
+        <CallsStatisticsBar
           progress={newCallsAndQuality}
           currentCalls={acceptedCalls.length}
           totalCalls={callListData.length}
           text={"Новые звонки"}
         />
-        <ProgressBarCom
+        <CallsStatisticsBar
           persent={Math.floor(newCallsAndQuality)}
           progress={newCallsAndQuality}
           color="yellow"
           prs="persent"
           text={"Качество разговоров"}
         />
-        <ProgressBarCom
+        <CallsStatisticsBar
           persent={Math.floor(callsQuality)}
           progress={callsQuality}
           color="red"
@@ -77,7 +78,7 @@ export const UserPanel = () => {
           text={"Конверсия в заказ"}
         />
         <div className={style.magnifier}>
-          <Magnifier />
+          <SearchTool />
         </div>
         <div className={style.partnership}>
           ИП Сидорова Александра Михайловна

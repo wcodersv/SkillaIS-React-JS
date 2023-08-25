@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import "./styles/global.css";
 import { useDispatch } from "react-redux";
-import { fetchMenu } from "../store/menuSlice";
 import Layout from "../layout/Layout";
-import { fetchCalls } from "../store/callsSlice";
+import { fetchMenu } from "../store/reducers/menuSlice";
+import { fetchCalls } from "../store/reducers/callsSlice";
 
 /**
  * Application entrypoint
@@ -13,11 +13,11 @@ function App() {
   const TOKEN = "testtoken";
   const dispatch = useDispatch();
 
-  // Используем useEffect для загрузки данных меню после монтирования компонента
+  // Используем useEffect для загрузки данных после монтирования компонента
   useEffect(() => {
     dispatch(fetchMenu({ TOKEN })); // Передаем TOKEN в виде объекта
     dispatch(fetchCalls());
-  }, [dispatch, TOKEN]);
+  }, [dispatch]);
 
   return (
     <>

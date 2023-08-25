@@ -1,0 +1,11 @@
+.magnifier {
+  width: 16px;
+  height: 16px;
+  background-image: url("./image/magnifier.svg");
+}
+
+.magnifier:hover {
+  width: 16px;
+  height: 16px;
+  background-image: url("./image/magnifier_blue.svg");
+}

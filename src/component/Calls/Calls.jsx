@@ -129,8 +129,6 @@ export const Calls = ({
     groupedCalls[callDate].push(item);
   });
 
-  console.log(groupedCalls);
-
   return (
     <>
       {/* Отображаем звонки сгруппированные по датам */}

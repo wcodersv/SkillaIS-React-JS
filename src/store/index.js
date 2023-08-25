@@ -1,7 +1,6 @@
-// Импорт необходимых зависимостей
 import { configureStore } from "@reduxjs/toolkit";
-import menuReducer from "./menuSlice"; // Импорт редьюсера для меню
-import callsReducer from "./callsSlice";
+import menuReducer from "./reducers/menuSlice";
+import callsReducer from "./reducers/callsSlice";
 
 // Создание и настройка Redux Store
 export default configureStore({

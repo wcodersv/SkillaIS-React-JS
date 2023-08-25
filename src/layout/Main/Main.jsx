@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import style from "./Main.module.css";
 import UserPanel from "../../component/UserPanel";
 import FilterPanel from "../../component/FilterPanel";
-import CallGrid from "../../component/CallGrid";
-import Calls from "../../component/Calls";
-import ButtonBalanceIcon from "../../ui/ButtonBalanceIcon";
-import FilterCalendar from "../../component/FilterCalendar";
+import FilterCalendar from "../../ui/FilterCalendar";
+import CallListContainer from "../../component/CallListContainer";
+import CallListRenderer from "../../component/CallListRenderer";
+import ButtonBalance from "../../ui/ButtonBalance";
 
 export const Main = () => {
   const [value, setValue] = useState(""); // Состояние для хранения значения фильтрации Input (FindCall)
@@ -16,7 +16,7 @@ export const Main = () => {
   const [selectedSource, setSelectedSource] = useState("Все источники"); // Состояние для фильтра по Источнику
   const [selectedRating, setSelectedRating] = useState("Все оценки"); // Состояние для фильтра по Оценкам
 
-  // Обработчик изменения значения фильтрации
+  // Обработчик изменения значения фильтрации из Input
   const handleInputChange = (evt) => {
     setValue(evt.target.value);
     console.log(evt.target.value);
@@ -28,6 +28,7 @@ export const Main = () => {
     setSelectedEndDate(endDate);
   };
 
+  // Флаг активных фильтров
   const hasActiveFilters =
     value !== "" ||
     selectedStartDate !== null ||
@@ -37,6 +38,7 @@ export const Main = () => {
     selectedSource !== "Все источники" ||
     selectedRating !== "Все оценки";
 
+  // Обработчик сброса всех фильтров при клике на кнопку "Сбросить фильтры"
   const handleResetFilters = () => {
     setValue("");
     setSelectedStartDate(null);
@@ -52,7 +54,7 @@ export const Main = () => {
       <UserPanel />
       <div className={style.main}>
         <div className={style.additional_filtering}>
-          <ButtonBalanceIcon />
+          <ButtonBalance />
           <FilterCalendar
             handleDateRangeChange={handleDateRangeChange}
             selectedStartDate={selectedStartDate}
@@ -73,8 +75,8 @@ export const Main = () => {
           filtersActive={hasActiveFilters} // Передаем флаг активных фильтров в FilterPanel
         />
 
-        <CallGrid>
-          <Calls
+        <CallListContainer>
+          <CallListRenderer
             value={value}
             startDate={selectedStartDate}
             endDate={selectedEndDate}
@@ -83,7 +85,7 @@ export const Main = () => {
             selectedSource={selectedSource}
             selectedRating={selectedRating}
           />
-        </CallGrid>
+        </CallListContainer>
       </div>
     </main>
   );

@@ -4,6 +4,7 @@ import style from "./Nav.module.css";
 import PayButton from "../../ui/PayButton";
 import AddOrderButton from "../../ui/AddOrderButton";
 
+// Импортируем иконки для разных пунктов меню
 import time from "../../icons/chart-timeline-variant.svg";
 import order from "../../icons/orders-24px.svg";
 import mail from "../../icons/mail_outline-24px.svg";
@@ -16,8 +17,10 @@ import library from "../../icons/local_library_black_24dp.svg";
 import settings from "../../icons/settings-24px.svg";
 
 export const Nav = () => {
+  // Получаем данные меню из Redux-состояния
   const menuData = useSelector((state) => state.menu.menu);
 
+  // Объект с иконками для каждого пункта меню
   const imgIcon = {
     Итоги: time,
     Заказы: order,
@@ -35,11 +38,13 @@ export const Nav = () => {
   return (
     <nav className={style.body}>
       <div className={style.logo}>
+        {/* логотип */}
         <a href="/">
           <img src="../../logo.svg" alt="Логотип" />
         </a>
       </div>
       <div className={style.navigation}>
+        {/* Отображаем пункты меню на основе данных из menuData */}
         <ul>
           {menuData.map((menu) =>
             menu.name !== "Звонки" ? (
@@ -57,6 +62,7 @@ export const Nav = () => {
           )}
         </ul>
       </div>
+      {/* Кнопки "Добавить заказ" и "Оплатить" */}
       <div className={style.btn}>
         <AddOrderButton />
         <PayButton />

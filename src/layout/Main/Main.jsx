@@ -53,7 +53,10 @@ export const Main = () => {
       <div className={style.main}>
         <div className={style.additional_filtering}>
           <ButtonBalanceIcon />
-          <FilterCalendar handleDateRangeChange={handleDateRangeChange} />
+          <FilterCalendar
+            handleDateRangeChange={handleDateRangeChange}
+            selectedStartDate={selectedStartDate}
+          />
         </div>
         <FilterPanel
           handleResetFilters={handleResetFilters}

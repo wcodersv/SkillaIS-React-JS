@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+### find . -type d -print -exec sh -c "ls -p {} | grep -v /" \; > folder_structure.txt
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

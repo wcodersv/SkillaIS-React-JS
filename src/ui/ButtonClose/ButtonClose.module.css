@@ -1,0 +1,21 @@
+.default {
+    height: 24px;
+    width: 24px;
+    background-image: url('./image/close-default.svg');
+    background-size: contain;
+}
+
+.default:hover {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    background-image: url('./image/close-hover.svg');
+    background-size: contain;
+}
+
+.disabled {
+    height: 24px;
+    width: 24px;
+    background-image: url('./image/close-disabled.svg');
+    background-size: contain;
+}

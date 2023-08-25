@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./SelectedAudioFiles.module.css";
-import CloseButton from "../CloseButton";
-import Download from "../Download";
+import ButtonClose from "../ButtonClose";
+import ButtonDownload from "../ButtonDownload";
 
 export const SelectedAudioFiles = () => {
   return (
@@ -13,8 +13,8 @@ export const SelectedAudioFiles = () => {
         Выбрать все <span>310</span>
       </label>
       <label className={style.recognize}>Распознать</label>
-      <Download />
-      <CloseButton />
+      <ButtonDownload />
+      <ButtonClose />
     </div>
   );
 };

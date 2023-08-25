@@ -1,11 +1,10 @@
 import React, { useState, useRef } from "react";
 import style from "./AudioPlayer.module.css";
-import CloseButton from "../CloseButton/index";
-import Download from "../Download";
+import ButtonClose from "../ButtonClose";
+import ButtonDownload from "../ButtonDownload";
 
-// eslint-disable-next-line react/prop-types
 export const AudioPlayer = ({ src }) => {
-  // не обращать внимание на код - Вика
+  // не обращать внимание на код - Вика / надо написать свой
   const [isPlaying, setIsPlaying] = useState(false);
   // const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -66,8 +65,8 @@ export const AudioPlayer = ({ src }) => {
       </button>
       <div className={style.progress} />
 
-      <Download />
-      <CloseButton />
+      <ButtonDownload />
+      <ButtonClose />
     </div>
   );
 };

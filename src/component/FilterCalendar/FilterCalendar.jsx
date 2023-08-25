@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { subDays, subMonths, subYears, format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 import style from "./FilterCalendar.module.css";
 
-export const FilterCalendar = ({ handleDateRangeChange }) => {
+export const FilterCalendar = ({
+  handleDateRangeChange,
+  selectedStartDate,
+}) => {
   const [isOptionsVisible, setOptionsVisible] = useState(false); // Состояние видимости опций в выпадающем списке
   const [selectedOption, setSelectedOption] = useState("3 дня"); // Состояние выбранной опции
   const [selectedDate, setSelectedDate] = useState(null); // Состояние выбранной даты
@@ -17,6 +20,19 @@ export const FilterCalendar = ({ handleDateRangeChange }) => {
 
   // Варианты опций
   const options = ["3 дня", "Неделя", "Месяц", "Год", "Выбрать даты"];
+
+  useEffect(() => {
+    if (selectedStartDate === null) {
+      setOptionsVisible(false);
+      setSelectedOption("3 дня");
+      setSelectedDate(null);
+      setStartDateRange(null);
+      setEndDateRange(null);
+      setSelectedOptionIndex(0);
+      setSelectedDateRangeText("");
+      setIsFiltered(false);
+    }
+  }, [selectedStartDate]);
 
   // Переключение на следующую опцию - Вправо кнопка
   const nextOption = () => {

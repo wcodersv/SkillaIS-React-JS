@@ -1,0 +1,38 @@
+.active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 52px;
+  padding: 13px 20px 14px 24px;
+  border-radius: 4px;
+  background: var(--ui-accent-active, #274bc8);
+  font-size: 16px;
+  color: white;
+}
+
+.active:hover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 52px;
+  padding: 13px 20px 14px 24px;
+  border-radius: 4px;
+  background: var(--ui, #0024cb);
+  font-size: 16px;
+  color: white;
+}
+
+.default {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  height: 52px;
+  padding: 13px 20px 14px 24px;
+  border-radius: 4px;
+  background: var(--ui-accent, #002cfb);
+  font-size: 16px;
+  color: white;
+}

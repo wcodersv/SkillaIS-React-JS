@@ -5,7 +5,7 @@ import Main from "../Main";
 import Footer from "../Footer";
 import style from "./Layout.module.css";
 import Notfound from "../../pages/Notfound";
-import ExitError from "../../pages/ExitError";
+import ExitError from "../../pages/ExitPage";
 
 export const Layout = () => {
   const router = createBrowserRouter([

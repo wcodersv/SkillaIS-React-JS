@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import style from "./Nav.module.css";
-import PayButton from "../../ui/PayButton";
-import AddOrderButton from "../../ui/AddOrderButton";
+import ButtonPay from "../../ui/ButtonPay";
+import ButtonAddOrder from "../../ui/ButtonAddOrder";
 
 // Импортируем иконки для разных пунктов меню
 import time from "../../icons/chart-timeline-variant.svg";
@@ -64,8 +64,8 @@ export const Nav = () => {
       </div>
       {/* Кнопки "Добавить заказ" и "Оплатить" */}
       <div className={style.btn}>
-        <AddOrderButton />
-        <PayButton />
+        <ButtonAddOrder />
+        <ButtonPay />
       </div>
     </nav>
   );

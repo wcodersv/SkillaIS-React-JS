@@ -6,7 +6,6 @@ import Layout from "../layout/Layout";
 import { fetchMenu } from "../store/reducers/menuSlice";
 import { fetchCalls } from "../store/reducers/callsSlice";
 import Notfound from "../pages/Notfound";
-import ExitError from "../pages/ExitPage";
 
 /**
  * Application entrypoint
@@ -30,7 +29,7 @@ function App() {
     },
     {
       path: "/exit",
-      element: <ExitError />,
+      element: <Notfound />,
     },
   ]);
 

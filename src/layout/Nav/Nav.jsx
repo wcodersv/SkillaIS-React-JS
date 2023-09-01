@@ -15,6 +15,7 @@ import pidentity from "../../icons/perm_identity_black_24dp.svg";
 import briefcase from "../../icons/briefcase-outline.svg";
 import library from "../../icons/local_library_black_24dp.svg";
 import settings from "../../icons/settings-24px.svg";
+import logo from "./image/logo.svg";
 
 export const Nav = () => {
   // Получаем данные меню из Redux-состояния
@@ -40,7 +41,7 @@ export const Nav = () => {
       <div className={style.logo}>
         {/* логотип */}
         <a href="/">
-          <img src="../../logo.svg" alt="Логотип" />
+          <img src={logo} alt="Логотип" />
         </a>
       </div>
       <div className={style.navigation}>

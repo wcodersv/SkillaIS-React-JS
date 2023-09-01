@@ -2,6 +2,7 @@
   "name": "skillais",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wcodersv.github.io/skillaIS/",
   "dependencies": {
     "@ramonak/react-progress-bar": "^5.0.3",
     "@reduxjs/toolkit": "^1.9.5",
@@ -10,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "date-fns": "^2.30.0",
     "eslit": "^6.0.0",
+    "gh-pages": "^6.0.0",
     "react": "^18.2.0",
     "react-datepicker": "^4.16.0",
     "react-dom": "^18.2.0",
@@ -26,7 +28,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "eslint": "eslint src --ext .js,.jsx",
-    "eslint:fix": "npm run eslint -- --fix"
+    "eslint:fix": "npm run eslint -- --fix",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [

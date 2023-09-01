@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/skillaIS/static/css/main.acbcc951.css",
-    "main.js": "/skillaIS/static/js/main.f995ee30.js",
+    "main.js": "/skillaIS/static/js/main.fc045d01.js",
     "static/media/settings-24px.svg": "/skillaIS/static/media/settings-24px.27703d2b5ad76e64ef87b476eccf1ead.svg",
     "static/media/web.svg": "/skillaIS/static/media/web.a12e0c1ea6b7e6bf7db9c15a85d1a759.svg",
     "static/media/chart-timeline-variant.svg": "/skillaIS/static/media/chart-timeline-variant.6e02172c3ae46f71c94a16f4196df580.svg",
@@ -38,10 +38,10 @@
     "static/media/getup.svg": "/skillaIS/static/media/getup.997c038ec339f5b8d0ac.svg",
     "static/media/bad_rating.svg": "/skillaIS/static/media/bad_rating.04896ed3373adf7cc7e8.svg",
     "main.acbcc951.css.map": "/skillaIS/static/css/main.acbcc951.css.map",
-    "main.f995ee30.js.map": "/skillaIS/static/js/main.f995ee30.js.map"
+    "main.fc045d01.js.map": "/skillaIS/static/js/main.fc045d01.js.map"
   },
   "entrypoints": [
     "static/css/main.acbcc951.css",
-    "static/js/main.f995ee30.js"
+    "static/js/main.fc045d01.js"
   ]
 }

@@ -1,9 +1,11 @@
 .body {
-  background: #D3DEEA;
+  margin: 0 auto;
 }
+
 .top {
   margin-top: 30px;
 }
+
 .container {
   margin: 0 auto;
   position: relative;
@@ -11,6 +13,7 @@
   height: 250px;
   margin-top: -40px;
 }
+
 .ghost {
   width: 50%;
   height: 53%;
@@ -23,6 +26,7 @@
   border-bottom: none;
   animation: float 2s ease-out infinite;
 }
+
 .ghost-copy {
   width: 50%;
   height: 53%;
@@ -36,13 +40,16 @@
   animation: float 2s ease-out infinite;
   z-index: 0;
 }
+
 .face {
   position: absolute;
   width: 100%;
   height: 60%;
   top: 20%;
 }
-.eye, .eye-right {
+
+.eye,
+.eye-right {
   position: absolute;
   background: #585959;
   width: 13px;
@@ -50,12 +57,15 @@
   border-radius: 50%;
   top: 40%;
 }
+
 .eye {
   left: 25%;
 }
+
 .eye-right {
   right: 25%;
 }
+
 .mouth {
   position: absolute;
   top: 50%;
@@ -67,7 +77,11 @@
   border-color: transparent #585959 #585959 transparent;
   transform: rotate(45deg);
 }
-.one, .two, .three, .four {
+
+.one,
+.two,
+.three,
+.four {
   position: absolute;
   background: #EDEDED;
   top: 85%;
@@ -76,22 +90,27 @@
   border: 1px solid #BFC0C0;
   z-index: 0;
 }
+
 .one {
   border-radius: 0 0 100% 30%;
   left: -1px;
 }
+
 .two {
   left: 23%;
   border-radius: 0 0 50% 50%;
 }
+
 .three {
   left: 50%;
   border-radius: 0 0 50% 50%;
 }
+
 .four {
   left: 74.5%;
   border-radius: 0 0 30% 100%;
 }
+
 .shadow {
   position: absolute;
   width: 30%;
@@ -102,25 +121,31 @@
   border-radius: 50%;
   animation: scale 2s infinite;
 }
+
 @keyframes scale {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 @keyframes float {
   50% {
     transform: translateY(15px);
   }
 }
+
 .bottom {
   margin-top: 10px;
 }
+
 /*text styling*/
 .title_header {
   font-family: 'Abril Fatface', serif;
@@ -130,6 +155,7 @@
   margin: 0;
   text-shadow: -1px 0 #BFC0C0, 0 1px #BFC0C0, 1px 0 #BFC0C0, 0 -1px #BFC0C0;
 }
+
 .title_header3 {
   font-family: 'Lato', sans-serif;
   font-size: 3em;
@@ -139,6 +165,7 @@
   margin-top: -20px;
   font-weight: 900;
 }
+
 .description {
   text-align: center;
   font-family: 'Lato', sans-serif;
@@ -160,10 +187,17 @@
   letter-spacing: 3px;
   font-family: 'Lato', sans-serif;
 }
+
 .footer a {
   color: #ffffff;
   text-decoration: none;
 }
+
 .footer a:hover {
   color: #7d7d7d;
+}
+
+
+.link {
+  text-decoration: none;
 }

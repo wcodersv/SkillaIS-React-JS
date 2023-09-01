@@ -2,12 +2,13 @@ import React from "react";
 import style from "./Profile.module.css";
 import Specialists from "../Specialists";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export const Profile = () => {
   const data = useSelector((state) => state.calls.calls);
   return (
     <div className={style.profile}>
-      <a className={style.exit} href="/exit"></a>
+      <Link to="/exit" className={style.exit} />
       <p className={style.name}>Упоров Кирилл.</p>
       <div className={style.job_city}>
         <p>Директор</p>

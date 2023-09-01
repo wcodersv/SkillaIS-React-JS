@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import style from "./Nav.module.css";
 import ButtonPay from "../../ui/ButtonPay";
@@ -40,9 +41,9 @@ export const Nav = () => {
     <nav className={style.body}>
       <div className={style.logo}>
         {/* логотип */}
-        <a href="/">
+        <Link to="/">
           <img src={logo} alt="Логотип" />
-        </a>
+        </Link>
       </div>
       <div className={style.navigation}>
         {/* Отображаем пункты меню на основе данных из menuData */}
@@ -51,12 +52,14 @@ export const Nav = () => {
             menu.name !== "Звонки" ? (
               <li key={`menu-${menu.name}`}>
                 <img src={imgIcon[menu.name]} alt="" />
-                <a href={menu.url}>{menu.name}</a>
+                {/* <a href={menu.url}>{menu.name}</a> */}
+                <Link to={menu.url}>{menu.name}</Link>
               </li>
             ) : (
               <li key={`menu-${menu.name}`} className={style.active_menu}>
                 <img src={imgIcon[menu.name]} alt="" />
-                <a href="/">{menu.name}</a>
+                {/* <a href="/">{menu.name}</a> */}
+                <Link to="/">{menu.name}</Link>
                 <div className={style.activeelem}></div>
               </li>
             ),

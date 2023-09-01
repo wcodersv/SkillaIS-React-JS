@@ -40,7 +40,7 @@ export const Nav = () => {
     <nav className={style.body}>
       <div className={style.logo}>
         {/* логотип */}
-        <a href="skillaIS/">
+        <a href="/">
           <img src={logo} alt="Логотип" />
         </a>
       </div>
